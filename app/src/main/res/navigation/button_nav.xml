@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/button_nav"
+app:startDestination="@id/pagina_personala"
+    tools:ignore="UnusedNavigation">
+
+<activity
+    android:id="@+id/pagina_personala"
+    android:name="com.example.proiectaz.PaginaPersonalaActivity"
+    android:label="pagina_personala" />
+<fragment
+    android:id="@+id/infoFragment"
+    android:name="com.example.proiectaz.InfoFragment"
+    android:label="InfoFragment" />
+</navigation>

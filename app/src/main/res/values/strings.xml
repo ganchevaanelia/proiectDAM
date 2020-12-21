@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">City App</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="UsernameTextView">Username</string>
+    <string name="UsernameEdit">Introduceti un username...</string>
+    <string name="UsernameEditText">Enter your password</string>
+    <string name="PasswordTextView">Password</string>
+    <string name="PasswordEditText">Introduceti o parola</string>
+    <string name="FirstNameTextView">Prenume</string>
+    <string name="NameEditText">Introduceti prenumele...</string>
+    <string name="LastNameTextView">Nume</string>
+    <string name="LastNameEditText">Introduceti numele de familie...</string>
+    <string name="EmailTextView">E-mail</string>
+    <string name="EmailEditText">Introduceti email-ul dumneavostra...</string>
+    <string name="TelefonTextView">Telefon</string>
+    <string name="TelefonEditText">Introduceti numarul de telefon...</string>
+    <string name="RegisterButton">Inregistrare</string>
+    <string name="navigation_drawer_open2">Open navigation drawer2</string>
+    <string name="navigation_drawer_close2">Close navigation drawer2</string>
+    <string name="plati">Plati</string>
+    <string name="btnCreareCont">Creeaza cont</string>
+    <string name="LogIn">Autentifica-te</string>
+
+    <string name="LogInText">Autentificare</string>
+    <string name="tVRegister">Creeaza Cont</string>
+    <string name="tvGender">Gen</string>
+    <string name="rbMale">Masculin</string>
+    <string name="rbFemale">Feminin</string>
+    <string name="EditTextUsernameLogIn">Enter your username</string>
+    <string name="efectueaza_o_plata">Adauga o plata</string>
+    <string name="nume_si_prenume_plata">Nume si prenume</string>
+    <string name="tipul_persoanei">Tipul persoanei</string>
+
+    <string name="introduceti_taxa_impozitul">Introduceti taxa/impozitul</string>
+    <string name="suma_plata">Suma</string>
+    <string name="introduceti_suma">Introduceti suma</string>
+    <string name="numar_card">Numar card</string>
+    <string name="data_expirarii">Data expirarii</string>
+    <string name="selecteaza_data_expirarii">Selecteaza data:</string>
+    <string name="adauga_sesizare">Adauga sesizare</string>
+    <string name="efectueaza_plata">Efectueaza o plata</string>
+    <string name="taxa_impozit">Taxa/impozit</string>
+    <string name="cod_cvv">Cod CVV</string>
+    <string name="trimite_plata">Trimite plata</string>
+    <string name="nume_prenume_hint">Introduceti numele si prenumele...</string>
+    <string name="numar_card_hint">Introduceti numarul cardului...</string>
+    <string name="data_exiparii_hint">Selecteaza data expirarii cardului...</string>
+    <string name="cod_cvv_hint">Introduceti codul CVV</string>
+    <string name="selecteaza_categorie">Selecteaza categorie</string>
+    <string name="selecteaza_subcategorie">Selecteaza subcategorie</string>
+    <string name="adauga_descriere">Adaugati o descriere</string>
+    <string name="trimite_sesizare">Trimite sesizare</string>
+    <string name="anunturi">Anunturi</string>
+    <string name="plati_efectuate">Plati efectuate</string>
+
+    <string name="welcometext">Welcome to Iasi!</string>
+    <string name="bine_ati_venit">Primaria municipiului Iasi!</string>
+    <string name="informatia">Informatia</string>
+    <string name="loading">LOADING...</string>
+    <string name="va_rugam_asteptati">Va rugam asteptati...</string>
+
+    <string name="iasi_informatii">Muncipiul Iaşi se numară printre cele mai vechi şi mai importante aşezări ale ţării, în care a pulsat mereu, puternic, o autentică viaţă românească. Capitală a Moldovei, oraşul a dat patrimoniului naţional inestimabile valori materiale şi spirituale, a înscris în istoria ţării pagini glorioase, rămase durabil în conştiinţa poporului.</string>
+    <string name="alegeTaxaImpozit">Alege</string>
+    <string name="impozit_checkBox">Impozit</string>
+    <string name="taxa_checkBox">Taxa</string>
+    <string name="detalii_plata">Detalii</string>
+    <string name="introduceti_denumirea_taxei_impozitului">Introduceti denumirea taxei/impozitului</string>
+    <string name="parere_rating">Cum vi s-a parut?</string>
+    <string name="detalii_rating">Detalii...</string>
+    <string name="introduceti_parola">Introduceti parola</string>
+    <string name="introduceti_username">Introduceti username</string>
+    <string name="nu_aveti_cont">Nu aveti cont?</string>
+    <string name="creeaza_cont">Creeaza cont</string>
+    <string name="sesizari">Sesizari</string>
+    <string name="sesizari_trimise">Sesizari trimise</string>
+    <string name="operatiuni">Operatiuni</string>
+    <string name="sw_dark_mode">Dark mode</string>
+    <string-array name="add_plata_pers">
+        <item>FIZICA </item>
+        <item>JURIDICA</item>
+    </string-array>
+</resources>

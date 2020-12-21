@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="130dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="2dp"
+        android:background="@color/colorAccentDark2">
+
+        <TextView
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="25sp"
+
+            />
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+
+
+                />
+
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/va_rugam_asteptati"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

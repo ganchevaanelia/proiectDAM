@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/GrayLight"
+    android:padding="20dp"
+    tools:context=".AdaugaPlataActivity">
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvEfectueazaPlata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/efectueaza_plata"
+            android:textColor="@color/colorAccentDark2"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/tvNumeSiPrenume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nume_si_prenume_plata"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/etNumeSiPrenume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/nume_prenume_hint"
+            android:inputType="textPersonName"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tvTipulPersonei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/tipul_persoanei"
+            android:textSize="17sp"/>
+
+        <Spinner
+            android:id="@+id/spinner_TipulPersonei"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvAlegeTaxaImpoxit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alegeTaxaImpozit"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="17sp"
+            android:layout_marginTop="10dp">
+
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/impozit_checkBox"
+                android:textSize="17sp">
+
+            </CheckBox>
+            <Space
+                android:layout_height="wrap_content"
+                android:layout_width="30dp">
+
+            </Space>
+
+            <CheckBox
+                android:id="@+id/checkbox2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/taxa_checkBox"
+                android:textSize="17sp">
+
+            </CheckBox>
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tvDetaliiPlata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/detalii_plata"
+            android:textSize="17sp"/>
+        <EditText
+            android:id="@+id/etDetaliiTaxaImpozit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/introduceti_denumirea_taxei_impozitului"
+            android:inputType="text"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tvSuma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/suma_plata"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/editTextNumberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/introduceti_suma"
+            android:inputType="numberDecimal"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/tvNrCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/numar_card"
+            android:textSize="17sp"/>
+
+        <EditText
+            android:id="@+id/etNumarCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/numar_card_hint"
+            android:inputType="number"
+            android:textSize="17sp"/>
+        <TextView
+            android:id="@+id/tvDataExpirareCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/data_expirarii"
+            android:textSize="17sp"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/data_exiparii_hint"
+            android:textSize="17sp"
+            android:layout_marginTop="8dp"/>
+
+
+        <TextView
+            android:id="@+id/tvCodCVV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="10dp"
+            android:text="@string/cod_cvv"
+            android:textSize="17sp"/>
+
+
+        <EditText
+            android:id="@+id/etCodCVV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/cod_cvv_hint"
+            android:inputType="number"
+            android:textSize="17sp"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="31dp" />
+
+        <Button
+            android:id="@+id/btnPlateste"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccentLight"
+            android:text="@string/trimite_plata"
+            android:textColor="@color/colorAccentDark1"
+            android:textSize="19sp"
+            android:textStyle="bold">
+
+        </Button>
+
+
+
+</LinearLayout>
+
+    </ScrollView>
+
+
+    </LinearLayout>
