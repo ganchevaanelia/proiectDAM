@@ -32,8 +32,8 @@ public class ProfilActivity extends AppCompatActivity
 
 
 
-
-        login.setOnClickListener(new View.OnClickListener() {
+Button loginOk=findViewById(R.id.loginOk);
+        loginOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
