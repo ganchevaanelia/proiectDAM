@@ -102,6 +102,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(it);
     }
 
+    public void openInfo(){
+        Intent it=new Intent(this, Informatii.class);
+        startActivity(it);
+    }
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -115,8 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openNews();
                 break;
             case R.id.nav_info:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new InfoFragment()).commit();
+               openInfo();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

@@ -77,6 +77,7 @@
     <string name="sesizari_trimise">Sesizari trimise</string>
     <string name="operatiuni">Operatiuni</string>
     <string name="sw_dark_mode">Dark mode</string>
+    <string name="button_load_info">Incarca informatii</string>
     <string-array name="add_plata_pers">
         <item>FIZICA </item>
         <item>JURIDICA</item>

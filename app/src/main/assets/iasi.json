@@ -1,0 +1,70 @@
+{
+
+    "Informatii": {
+      "judet": "Iasi",
+        "orase": [
+          {
+            "city": "Ia\u015fi",
+            "coordonate": {
+              "lat": "47.1622",
+              "lng": "27.5889"
+            },
+            "country": "Romania",
+            "capital": "admin",
+            "population": "290422"
+          },
+
+          {
+            "city": "H\u00e2rl\u0103u",
+            "coordonate": {
+              "lat": "47.4278",
+              "lng": "26.9114"
+            },
+            "country": "Romania",
+            "capital": "---",
+            "population": "10905"
+          },
+          {
+            "city": "T\u00e2rgu Frumos",
+            "coordonate": {
+              "lat": "47.2097",
+              "lng": "27.0131"
+            },
+            "country": "Romania",
+            "capital": "---",
+            "population": "10475"
+          },
+          {
+            "city": "Podu Iloaiei",
+            "coordonate": {
+              "lat": "47.2167",
+              "lng": "27.2667"
+            },
+            "country": "Romania",
+            "capital": "---",
+            "population": "9573"
+          },
+          {
+            "city": "Victoria",
+            "coordonate": {
+              "lat": "47.2860",
+              "lng": "27.5976"
+            },
+            "country": "Romania",
+            "capital": "---",
+            "population": "4282"
+          },
+          {
+            "city": "Ungheni-Prut",
+            "coordonate": {
+              "lat": "47.2000",
+              "lng": "27.7833"
+            },
+            "country": "Romania",
+            "capital": "---",
+            "population": "4173"
+          }
+        ]
+      }
+    }
+

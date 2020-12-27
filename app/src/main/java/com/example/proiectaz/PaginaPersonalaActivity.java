@@ -76,6 +76,11 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         startActivity(it);
     }
 
+    public void openInfo(){
+        Intent it=new Intent(this, Informatii.class);
+        startActivity(it);
+    }
+
 
 
 
@@ -91,8 +96,7 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
                 openNews();
                 break;
             case R.id.nav_info:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,
-                        new InfoFragment()).commit();
+               openInfo();
 
                 break;
             case R.id.nav_deconectare:
