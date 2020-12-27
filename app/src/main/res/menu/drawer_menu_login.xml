@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view2">
-<group android:checkableBehavior="single" ><!--ca sa putem selecta un singer item din grupul resp-->
+    tools:showIn="navigation_view2"
+    >
+<group android:checkableBehavior="single"><!--ca sa putem selecta un singer item din grupul resp-->
 <item android:id="@+id/nav_profil"
     android:icon="@drawable/user"
     android:title="Profil"/>
