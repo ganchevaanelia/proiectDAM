@@ -48,8 +48,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawer.addDrawerListener(toggle);
         toggle.syncState(); //se roteste putin hamburger meniu-ul
 
-
-       /*ParsareJSON parser = new ParsareJSON(){
+//testez daca sunt logata unde tb in git
+       ParsareJSON parser = new ParsareJSON(){
             @Override
             protected void onPostExecute(List<Double> doubles) {
                 TextView textView=findViewById(R.id.tvTemp);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         };
 
         parser.execute("http://dataservice.accuweather.com/forecasts/v1/daily/1day/287994?apikey=cS1Aj5oNy3uhp74BjKyVcwQOnDgGNlPA&metric=true");
-*/
+
         sharedPreferences = getSharedPreferences("night",0);
         Boolean boolDark = sharedPreferences.getBoolean("night_mode",false);
         if (boolDark){
