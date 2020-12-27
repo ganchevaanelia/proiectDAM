@@ -53,12 +53,6 @@
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-            <Switch
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="@string/sw_dark_mode"
-                />
         </androidx.appcompat.widget.Toolbar>
 
 
