@@ -13,9 +13,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:longClickable="true">
 
+            <ImageView
+                android:id="@+id/imageViewSesizare"
+                android:layout_width="54dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+
+                android:scaleType="fitXY">
+
+            </ImageView>
+
+            <Space
+                android:layout_width="18dp"
+                android:layout_height="match_parent">
+
+            </Space>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tvCategorie"
@@ -34,14 +54,17 @@
                 />
             <TextView
                 android:id="@+id/tvRatingBarValue"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
             <TextView
                 android:id="@+id/tvParereDetalii"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
+
+        </LinearLayout>
+
 
 <!--            <Button-->
 <!--            android:id="@+id/btnStergeSesizare"-->

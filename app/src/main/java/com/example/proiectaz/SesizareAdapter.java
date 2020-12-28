@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +63,26 @@ public class SesizareAdapter extends BaseAdapter {
 
         TextView tvParereDetalii=view.findViewById(R.id.tvParereDetalii);
         tvParereDetalii.setText(sesizare.getParereDetalii());
+
+        ImageView imageView=view.findViewById(R.id.imageViewSesizare);
+
+
+
+        if(tvRatingBarValue.getText().toString().equals("Recenzia ta : 1.0") || tvRatingBarValue.getText().toString().equals("Recenzia ta : 2.0"))
+
+        {
+           imageView.setBackgroundResource(R.drawable.sad);
+
+        }
+        else if (tvRatingBarValue.getText().toString().equals("Recenzia ta : 3.0")){
+            imageView.setBackgroundResource(R.drawable.neutral);
+        }
+        else {
+            imageView.setBackgroundResource(R.drawable.smile);
+        }
+
+
+
 
 //        Button btnStergeSesizare=view.findViewById(R.id.btnStergeSesizare);
 //
