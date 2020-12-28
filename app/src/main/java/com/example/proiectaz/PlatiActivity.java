@@ -1,18 +1,28 @@
 package com.example.proiectaz;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class PlatiActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PlatiActivity extends AppCompatActivity {
+    public static final int REQUEST_CODE = 200;
+
+    private ListView listView;
+    List<Plata> plataList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,12 +32,12 @@ public class PlatiActivity extends AppCompatActivity {
         adaugaPlata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent it = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(new Intent(getApplicationContext(), AdaugaPlataActivity.class));
+                Intent intent = new Intent(getApplicationContext(), AdaugaPlataActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 
-
+listView=findViewById(R.id.listViewPlati);
 
         BottomNavigationView btnNavView=findViewById(R.id.bottom_navigation);
         btnNavView.setSelectedItemId(R.id.activ_plati);
@@ -54,8 +64,36 @@ public class PlatiActivity extends AppCompatActivity {
         });
     }
 
-    public void arataListaPlati(View view) {
-//se va afisa lista cu platile efectuate
-    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+          Plata plata = (Plata) data.getSerializableExtra(AdaugaPlataActivity.ADD_PLATA);
+
+          if (plata !=null){
+              plataList.add(plata);
+
+              PlataAdapter adapter=new PlataAdapter(getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater(), R.drawable.payment_method){
+//getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()
+                  @NonNull
+                  @Override
+                  public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                      View view = super.getView(position, convertView, parent);
+
+                      Plata plata =  plataList.get(position);
+
+                      return view;
+                  }
+              };
+//              ArrayAdapter<Plata> adapter = new ArrayAdapter<Plata>(PlatiActivity.this,
+//                      android.R.layout.simple_list_item_1, plataList);
+
+
+              listView.setAdapter(adapter);
+          }
+          }
+
+
+    }
 }

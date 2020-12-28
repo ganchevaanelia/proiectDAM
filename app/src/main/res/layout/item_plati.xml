@@ -1,50 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#e9e4e5">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#e9e4e5"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-  <TextView
-      android:id="@+id/numePrenume"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-  <TextView
-      android:id="@+id/tipPersoana"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
 
-  <TextView
-      android:id="@+id/tipPlata"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
+            <ImageView
+                android:id="@+id/imageViewPlata"
+                android:layout_width="54dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/payment_method"
+                android:scaleType="fitXY">
 
-  <TextView
-      android:id="@+id/suma"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
+            </ImageView>
 
-  <TextView
-      android:id="@+id/nrCard"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
+            <Space
+                android:layout_width="18dp"
+                android:layout_height="match_parent">
 
-  <TextView
-      android:id="@+id/dataExpirarii"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
-  <TextView
-      android:id="@+id/codCVV"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      />
+            </Space>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <Button
+            android:id="@+id/btnMoreInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+       android:layout_gravity="right"
+
+
+            android:text="Schimba font">
+
+        </Button>
+    <TextView
+        android:id="@+id/numePrenume"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tipPersoana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/tipPlata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+        <TextView
+            android:id="@+id/tvDetaliii"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+    <TextView
+        android:id="@+id/suma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/nrCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:id="@+id/dataExpirarii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/codCVV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

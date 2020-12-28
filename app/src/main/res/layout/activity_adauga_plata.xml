@@ -75,34 +75,26 @@
             android:layout_marginTop="10dp">
 
         </TextView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="315dp"
+            android:layout_height="66dp"
             android:orientation="horizontal">
 
-            <CheckBox
-                android:id="@+id/checkbox1"
+
+            <RadioButton
+                android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/impozit_checkBox"
-                android:textSize="17sp">
+                android:checked="true"
+                android:text="Taxa" />
 
-            </CheckBox>
-            <Space
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="30dp">
-
-            </Space>
-
-            <CheckBox
-                android:id="@+id/checkbox2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/taxa_checkBox"
-                android:textSize="17sp">
-
-            </CheckBox>
-        </LinearLayout>
+                android:text="Impozit" />
+        </RadioGroup>
 
 
         <TextView

@@ -2,56 +2,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical"
     android:id="@+id/activ_plati"
     android:background="@color/GrayLight"
     tools:context=".PlatiActivity"
    >
 
-    <TextView
-        android:id="@+id/tvPlati"
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccentDark2"
-        android:paddingStart="15dp"
-        android:paddingTop="10dp"
-        android:text="Plati"
-        android:textColor="@android:color/white"
-        android:textSize="30sp"
-        android:textStyle="bold"></TextView>
-
-
-    <Button
-        android:id="@+id/btnPlatiEfectuate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/tvPlati"
-
-        android:onClick="arataListaPlati"
-        android:text="@string/plati_efectuate" />
-
-    <ListView
-        android:id="@+id/listViewPlati"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        />
-
-
-    <Button
-        android:id="@+id/efectueaza_plata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginBottom="93dp"
-        android:text="@string/efectueaza_o_plata"
-        android:textStyle="bold" />
+        android:layout_marginTop="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/tvPlati"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccentDark2"
+                android:paddingStart="15dp"
+                android:paddingTop="10dp"
+                android:text="Plati"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"></TextView>
+
+
+            <!--    <Button-->
+            <!--        android:id="@+id/btnPlatiEfectuate"-->
+            <!--        android:layout_width="wrap_content"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:layout_alignParentRight="true"-->
+            <!--        android:layout_below="@+id/tvPlati"-->
+
+            <!--        android:onClick="arataListaPlati"-->
+            <!--        android:text="@string/plati_efectuate" />-->
+
+            <ListView
+                android:id="@+id/listViewPlati"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                />
+
+            <Button
+                android:id="@+id/efectueaza_plata"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="93dp"
+                android:gravity="center"
+                android:text="@string/efectueaza_o_plata"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -64,4 +83,5 @@
         app:menu="@menu/buttom" />
 
 </RelativeLayout>
+
 
