@@ -90,8 +90,8 @@ listView=findViewById(R.id.listViewPlati);
 //                      android.R.layout.simple_list_item_1, plataList);
 
 
-              listView.setAdapter(adapter);
-          }
+                    listView.setAdapter(adapter);
+        }
           }
 
 

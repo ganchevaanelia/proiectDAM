@@ -67,7 +67,7 @@
     <string name="taxa_checkBox">Taxa</string>
     <string name="detalii_plata">Detalii</string>
     <string name="introduceti_denumirea_taxei_impozitului">Introduceti denumirea taxei/impozitului</string>
-    <string name="parere_rating">Cum vi s-a parut?</string>
+    <string name="parere_rating">Cum vi s-a parut acest proces?</string>
     <string name="detalii_rating">Detalii...</string>
     <string name="introduceti_parola">Introduceti parola</string>
     <string name="introduceti_username">Introduceti username</string>
@@ -78,6 +78,7 @@
     <string name="operatiuni">Operatiuni</string>
     <string name="sw_dark_mode">Dark mode</string>
     <string name="button_load_info">Incarca informatii</string>
+    <string name="sterge_sesizare">Sterge sesizare</string>
     <string-array name="add_plata_pers">
         <item>FIZICA </item>
         <item>JURIDICA</item>

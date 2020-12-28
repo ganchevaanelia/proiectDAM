@@ -1,35 +1,81 @@
 package com.example.proiectaz;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SesizariActivity extends AppCompatActivity {
 
+    public static final int REQUEST_CODE = 200;
 
+    private ListView listView;
+    List<Sesizare> sesizareList = new ArrayList<>();
+    Button stergeSesizare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesizari);
+        listView=findViewById(R.id.listViewSesizari);
 
-        Button adaugaSesizare= findViewById(R.id.adauga_sesizare);
+        Button adaugaSesizare = findViewById(R.id.adauga_sesizare);
         adaugaSesizare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent it = new Intent(getApplicationContext(), RegisterActivity.class);
-                startActivity(new Intent(getApplicationContext(), AdaugaSesizareActivity.class));
+
+
+                Intent intent = new Intent(getApplicationContext(), AdaugaSesizareActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final Sesizare sesizare = sesizareList.get(position);
+                final SesizareAdapter adapter = (SesizareAdapter) listView.getAdapter();
+
+                AlertDialog dialog = new AlertDialog.Builder(SesizariActivity.this)
+                        .setTitle("Confirmare stergere")
+                        .setMessage("Sigur doriti stergerea?")
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Toast.makeText(getApplicationContext(), "Nu s-a sters nimic!",
+                                        Toast.LENGTH_LONG).show();
+                                dialogInterface.cancel();
+                            }
+                        }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                sesizareList.remove(sesizare);
+                            }
+                        }).create();
+                dialog.show();
+                return true;
             }
         });
 
-        BottomNavigationView btnNavView=findViewById(R.id.bottom_navigation);
+
+        listView = findViewById(R.id.listViewSesizari);
+
+        BottomNavigationView btnNavView = findViewById(R.id.bottom_navigation);
         btnNavView.setSelectedItemId(R.id.activ_sesizari);
 
         btnNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -55,7 +101,43 @@ public class SesizariActivity extends AppCompatActivity {
 
     }
 
-    public void arataListaSesizari(View view) {
-    }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+            Sesizare sesizare = (Sesizare) data.getSerializableExtra(AdaugaSesizareActivity.ADD_SESIZARE);
+
+            if (sesizare != null) {
+                sesizareList.add(sesizare);
+
+//                ArrayAdapter<Sesizare> adapter = new ArrayAdapter<Sesizare>(SesizariActivity.this,
+//////                        android.R.layout.simple_list_item_1, sesizareList);
+
+
+                SesizareAdapter adapter = new SesizareAdapter(getApplicationContext(), R.layout.item_sesizari, sesizareList, getLayoutInflater()) {
+                    //getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()
+                    @NonNull
+                    @Override
+                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+                        View view = super.getView(position, convertView, parent);
+
+                        Sesizare sesizare = sesizareList.get(position);
+
+                        return view;
+                    }
+                };
+                listView.setAdapter(adapter);
+            }
+
+
+        }
     }
+}
+
+
+
+
+

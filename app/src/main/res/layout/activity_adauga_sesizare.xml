@@ -81,8 +81,58 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="25dp" />
+                android:layout_height="70dp" />
 
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/parere_rating"
+                android:textAppearance="?android:textAppearanceLarge" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:stepSize=".5"
+                />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Adauga"
+                            android:id="@+id/btnAdaugaRating"
+                            android:textColor="@color/colorAccentDark2"
+                            android:background="@color/colorAccentLight"
+                            android:textStyle="bold"
+                            />
+
+            <TextView
+                android:id="@+id/rateCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                />
+
+            <EditText
+                android:id="@+id/RatingBarDetalii"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/detalii_rating"
+                android:textAppearance="?android:textAppearanceMedium" />
+
+
+
+            <TextView
+                android:id="@+id/ArataPareri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:layout_marginTop="10dp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="40dp"></Space>
             <Button
                 android:id="@+id/btnSesizare"
                 android:layout_width="match_parent"
@@ -93,56 +143,13 @@
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="100dp" />
+             />
 
 
-            <TextView
-                android:id="@+id/tvRating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/parere_rating"
-                android:textAppearance="?android:textAppearanceLarge"/>
-            
-            <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
 
-            <TextView
-                android:id="@+id/rateCount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceMedium"
-                />
 
-            <EditText
-                android:id="@+id/RatingBarDetalii"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/detalii_rating"
-                android:textAppearance="?android:textAppearanceMedium"
-                />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Adauga"
-                android:id="@+id/btnAdaugaRating"
-                android:textColor="@color/colorAccentDark2"
-                android:background="@color/colorAccentLight"
-                android:textStyle="bold"
-                />
 
-            <TextView
-                android:id="@+id/ArataPareri"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:layout_marginTop="10dp"/>
 
 
 </LinearLayout>

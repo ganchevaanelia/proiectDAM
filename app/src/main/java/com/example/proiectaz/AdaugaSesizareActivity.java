@@ -9,11 +9,20 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class AdaugaSesizareActivity extends AppCompatActivity {
+    public static final String ADD_SESIZARE = "AdaugaSesizare";
+
+
     Spinner spinnercategorieParent, spinnercategorieChild;
     ArrayList<String> arrayList_parent;
     ArrayAdapter<String> arrayAdapter_parent;
@@ -26,6 +35,16 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adauga_sesizare);
+        final RatingBar ratingBar=findViewById(R.id.ratingBar);
+        Button btnRating=findViewById(R.id.btnAdaugaRating);
+        final TextView tvDispayRating=findViewById(R.id.rateCount);
+
+        btnRating.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvDispayRating.setText("Recenzia ta : "+ratingBar.getRating());
+            }
+        });
 
         spinnercategorieParent = (Spinner)findViewById(R.id.spinnercategorieParent);
         spinnercategorieChild = (Spinner)findViewById(R.id.spinnercategorieChild);
@@ -126,6 +145,37 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
                             startActivity(it);
                             finish();
 
+            }
+        });
+
+        final EditText etDetaliiSesizare=findViewById(R.id.et_sesizari);
+        final TextView tvValueRating=findViewById(R.id.rateCount);
+        final EditText parereRating=findViewById(R.id.RatingBarDetalii);
+        final Intent intent=new Intent(AdaugaSesizareActivity.this, SesizariActivity.class);
+
+        Button button=findViewById(R.id.btnSesizare);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(etDetaliiSesizare.getText().toString().isEmpty())
+                    etDetaliiSesizare.setError("Introduceti detalii!");
+
+                try{
+                    String categorie= String.valueOf(spinnercategorieParent.getSelectedItem().toString().toUpperCase());
+                    String subcategorie= String.valueOf(spinnercategorieChild.getSelectedItem().toString().toUpperCase());
+                    String detaliiSesizare=etDetaliiSesizare.getText().toString();
+                    String  tvDispayRating=tvValueRating.getText().toString();
+                    String detaliiRating=parereRating.getText().toString();
+
+                    Sesizare sesizare=new Sesizare(categorie, subcategorie, detaliiSesizare, tvDispayRating, detaliiRating);
+
+                    intent.putExtra(ADD_SESIZARE, sesizare);
+                    setResult(RESULT_OK, intent);
+                    finish();
+
+            } catch (IllegalArgumentException e) {
+                e.printStackTrace();
+            }
             }
         });
     }
