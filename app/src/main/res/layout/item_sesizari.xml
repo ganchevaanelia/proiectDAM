@@ -2,7 +2,8 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants">
 
 
     <ScrollView
@@ -12,7 +13,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:longClickable="true">
 
 
             <TextView
@@ -41,15 +43,15 @@
                 android:layout_height="wrap_content"
                 />
 
-            <Button
-                android:id="@+id/btnStergeSesizare"
-                android:text="@string/sterge_sesizare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                >
+<!--            <Button-->
+<!--            android:id="@+id/btnStergeSesizare"-->
+<!--            android:text="@string/sterge_sesizare"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="right"-->
+<!--            >-->
 
-            </Button>
+<!--        </Button>-->
 
 
         </LinearLayout>

@@ -25,15 +25,15 @@ public class SesizariActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE = 200;
 
-    private ListView listView;
-    List<Sesizare> sesizareList = new ArrayList<>();
+    private ListView listView1;
+    List<Sesizare> sesizareList = new ArrayList<Sesizare>();
     Button stergeSesizare;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesizari);
-        listView=findViewById(R.id.listViewSesizari);
+        listView1=findViewById(R.id.listViewSesizari);
 
         Button adaugaSesizare = findViewById(R.id.adauga_sesizare);
         adaugaSesizare.setOnClickListener(new View.OnClickListener() {
@@ -45,35 +45,41 @@ public class SesizariActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
-        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int position, long id) {
                 final Sesizare sesizare = sesizareList.get(position);
-                final SesizareAdapter adapter = (SesizareAdapter) listView.getAdapter();
+                final SesizareAdapter adapter = (SesizareAdapter) listView1.getAdapter();
 
                 AlertDialog dialog = new AlertDialog.Builder(SesizariActivity.this)
                         .setTitle("Confirmare stergere")
                         .setMessage("Sigur doriti stergerea?")
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                Toast.makeText(getApplicationContext(), "Nu s-a sters nimic!",
-                                        Toast.LENGTH_LONG).show();
-                                dialogInterface.cancel();
-                            }
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Toast.makeText(getApplicationContext(), "Nu s-a sters nimic!",
+                                                Toast.LENGTH_LONG).show();
+                                        dialogInterface.cancel();
+                                    }
                         }).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 sesizareList.remove(sesizare);
+                                adapter.notifyDataSetChanged();
+                                Toast.makeText(getApplicationContext(), "S-a sters filmul: "+sesizare.toString(),
+                                        Toast.LENGTH_LONG).show();
+                                dialogInterface.cancel();
                             }
                         }).create();
+
                 dialog.show();
+
                 return true;
             }
         });
 
 
-        listView = findViewById(R.id.listViewSesizari);
+
 
         BottomNavigationView btnNavView = findViewById(R.id.bottom_navigation);
         btnNavView.setSelectedItemId(R.id.activ_sesizari);
@@ -129,7 +135,7 @@ public class SesizariActivity extends AppCompatActivity {
                         return view;
                     }
                 };
-                listView.setAdapter(adapter);
+                listView1.setAdapter(adapter);
             }
 
 
