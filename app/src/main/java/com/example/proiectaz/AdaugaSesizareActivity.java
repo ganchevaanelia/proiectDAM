@@ -17,7 +17,9 @@ import android.widget.TextView;
 import org.w3c.dom.Text;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class AdaugaSesizareActivity extends AppCompatActivity {
     public static final String ADD_SESIZARE = "AdaugaSesizare";
@@ -27,27 +29,29 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
     ArrayList<String> arrayList_parent;
     ArrayAdapter<String> arrayAdapter_parent;
 
-    ArrayList<String> arrayList_spatii, arrayList_strazi,arrayList_parcari,
+    ArrayList<String> arrayList_spatii, arrayList_strazi, arrayList_parcari,
             arrayList_iluminat, arrayList_alte;
     ArrayAdapter<String> arrayAdapter_child;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adauga_sesizare);
-        final RatingBar ratingBar=findViewById(R.id.ratingBar);
-        Button btnRating=findViewById(R.id.btnAdaugaRating);
-        final TextView tvDispayRating=findViewById(R.id.rateCount);
+        final RatingBar ratingBar = findViewById(R.id.ratingBar);
+        Button btnRating = findViewById(R.id.btnAdaugaRating);
+        final TextView tvDispayRating = findViewById(R.id.rateCount);
 
         btnRating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tvDispayRating.setText("Recenzia ta : "+ratingBar.getRating());
+                tvDispayRating.setText("Recenzia ta : " + ratingBar.getRating());
             }
         });
 
-        spinnercategorieParent = (Spinner)findViewById(R.id.spinnercategorieParent);
-        spinnercategorieChild = (Spinner)findViewById(R.id.spinnercategorieChild);
+        spinnercategorieParent = (Spinner) findViewById(R.id.spinnercategorieParent);
+        spinnercategorieChild = (Spinner) findViewById(R.id.spinnercategorieChild);
 
         arrayList_parent = new ArrayList<>();
         arrayList_parent.add("Alege categoria potrivita");
@@ -58,7 +62,7 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
         arrayList_parent.add("Altele");
 
         arrayAdapter_parent = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_spinner_item,arrayList_parent);
+                android.R.layout.simple_spinner_item, arrayList_parent);
         spinnercategorieParent.setAdapter(arrayAdapter_parent);
 
 
@@ -89,40 +93,39 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
         spinnercategorieParent.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position==0)
-                {
+                if (position == 0) {
                     spinnercategorieChild.setEnabled(false);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_alte);
                 }
 
-                if (position==1) {
+                if (position == 1) {
                     spinnercategorieChild.setEnabled(true);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_spatii);
                 }
 
-                if (position==2) {
+                if (position == 2) {
                     spinnercategorieChild.setEnabled(true);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_strazi);
                 }
 
-                if (position==3) {
+                if (position == 3) {
                     spinnercategorieChild.setEnabled(true);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_parcari);
                 }
 
-                if (position==4) {
+                if (position == 4) {
                     spinnercategorieChild.setEnabled(true);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_iluminat);
                 }
 
-                if (position==5) {
+                if (position == 5) {
                     spinnercategorieChild.setEnabled(false);
-                    arrayAdapter_child=new ArrayAdapter<>(getApplicationContext(),
+                    arrayAdapter_child = new ArrayAdapter<>(getApplicationContext(),
                             android.R.layout.simple_spinner_item, arrayList_alte);
                 }
 
@@ -135,48 +138,75 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSez;
-        btnSez=findViewById(R.id.btnSesizare);
-        btnSez.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//        Button btnSez;
+//        btnSez = findViewById(R.id.btnSesizare);
+//        btnSez.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent it = new Intent(getApplicationContext(), SesizariActivity.class);
+//                startActivity(it);
+//                finish();
+//
+//            }
+//        });
 
-                            Intent it=new Intent(getApplicationContext(), SesizariActivity.class);
-                            startActivity(it);
-                            finish();
+        final EditText etDetaliiSesizare = findViewById(R.id.et_sesizari);
+        final TextView tvValueRating = findViewById(R.id.rateCount);
+        final EditText parereRating = findViewById(R.id.RatingBarDetalii);
+        //final Intent intent = new Intent(AdaugaSesizareActivity.this, SesizariActivity.class);
+        final Intent intent = getIntent();
 
-            }
-        });
+        if (intent.hasExtra(SesizariActivity.EDIT_SESIZARE)) {
+            Sesizare sesizare = (Sesizare) intent.getSerializableExtra(SesizariActivity.EDIT_SESIZARE);
 
-        final EditText etDetaliiSesizare=findViewById(R.id.et_sesizari);
-        final TextView tvValueRating=findViewById(R.id.rateCount);
-        final EditText parereRating=findViewById(R.id.RatingBarDetalii);
-        final Intent intent=new Intent(AdaugaSesizareActivity.this, SesizariActivity.class);
+            ArrayAdapter<String> adaptor = (ArrayAdapter<String>) spinnercategorieParent.getAdapter();
+            for (int i = 0; i < adaptor.getCount(); i++)
+                if (adaptor.getItem(i).equals(sesizare.getCategorie())) {
+                    spinnercategorieParent.setSelection(i);
+                    break;
+                }
 
-        Button button=findViewById(R.id.btnSesizare);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(etDetaliiSesizare.getText().toString().isEmpty())
-                    etDetaliiSesizare.setError("Introduceti detalii!");
+            ArrayAdapter<String> adaptor2 = (ArrayAdapter<String>) spinnercategorieChild.getAdapter();
+            for (int i = 0; i < adaptor.getCount(); i++)
+                if (adaptor2.getItem(i).equals(sesizare.getSubcategorie())) {
+                    spinnercategorieChild.setSelection(i);
+                    break;
+                }
 
-                try{
-                    String categorie= String.valueOf(spinnercategorieParent.getSelectedItem().toString().toUpperCase());
-                    String subcategorie= String.valueOf(spinnercategorieChild.getSelectedItem().toString().toUpperCase());
-                    String detaliiSesizare=etDetaliiSesizare.getText().toString();
-                    String  tvDispayRating=tvValueRating.getText().toString();
-                    String detaliiRating=parereRating.getText().toString();
+            etDetaliiSesizare.setText(sesizare.getDetaliiSesizare());
+            parereRating.setText(sesizare.getParereDetalii());
+        }
 
-                    Sesizare sesizare=new Sesizare(categorie, subcategorie, detaliiSesizare, tvDispayRating, detaliiRating);
 
-                    intent.putExtra(ADD_SESIZARE, sesizare);
-                    setResult(RESULT_OK, intent);
-                    finish();
 
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            }
-            }
-        });
+                   Button button= findViewById(R.id.btnSesizare);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (etDetaliiSesizare.getText().toString().isEmpty())
+                        etDetaliiSesizare.setError("Introduceti detalii!");
+
+                    try {
+                        String categorie = String.valueOf(spinnercategorieParent.getSelectedItem().toString().toUpperCase());
+                        String subcategorie = String.valueOf(spinnercategorieChild.getSelectedItem().toString().toUpperCase());
+                        String detaliiSesizare = etDetaliiSesizare.getText().toString();
+                        String tvDispayRating = tvValueRating.getText().toString();
+                        String detaliiRating = parereRating.getText().toString();
+
+                        Sesizare sesizare = new Sesizare(categorie, subcategorie, detaliiSesizare, tvDispayRating, detaliiRating);
+
+                        intent.putExtra(ADD_SESIZARE, sesizare);
+                        setResult(RESULT_OK, intent);
+                        finish();
+
+                    } catch (IllegalArgumentException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
     }
-}
+
+
+

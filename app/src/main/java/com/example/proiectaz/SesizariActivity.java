@@ -24,10 +24,13 @@ import java.util.List;
 public class SesizariActivity extends AppCompatActivity {
 
     public static final int REQUEST_CODE = 200;
-
+    public static final int REQUEST_CODE_EDIT = 300;
+    public static final String EDIT_SESIZARE= "editSesizare";
+    public int poz;
     private ListView listView1;
     List<Sesizare> sesizareList = new ArrayList<Sesizare>();
     Button stergeSesizare;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +44,20 @@ public class SesizariActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent = new Intent(getApplicationContext(), AdaugaSesizareActivity.class);
+                intent = new Intent(getApplicationContext(), AdaugaSesizareActivity.class);
                 startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                poz=position;
+                intent=new Intent(getApplicationContext(), AdaugaSesizareActivity.class);
+                intent.putExtra(EDIT_SESIZARE, sesizareList.get(position));
+                startActivityForResult(intent, REQUEST_CODE_EDIT);
+
+
             }
         });
         listView1.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
@@ -137,8 +152,33 @@ public class SesizariActivity extends AppCompatActivity {
                 };
                 listView1.setAdapter(adapter);
             }
+        }
+        else
+        if (requestCode == REQUEST_CODE_EDIT && resultCode == RESULT_OK && data != null) {
+            Sesizare sesizare = (Sesizare) data.getSerializableExtra(AdaugaSesizareActivity.ADD_SESIZARE);
+            {
+                if (sesizare != null) {
+                    sesizareList.get(poz).setCategorie(sesizare.getCategorie());
+                    sesizareList.get(poz).setSubcategorie(sesizare.getSubcategorie());
+                    sesizareList.get(poz).setDetaliiSesizare(sesizare.getDetaliiSesizare());
+                    sesizareList.get(poz).setParereRating(sesizare.getParereRating());
+                    sesizareList.get(poz).setParereDetalii(sesizare.getParereDetalii());
 
+                    SesizareAdapter adapter = new SesizareAdapter(getApplicationContext(), R.layout.item_sesizari, sesizareList, getLayoutInflater()) {
 
+                        @Override
+                        public View getView(int position, View convertView, ViewGroup parent) {
+
+                            View view = super.getView(position, convertView, parent);
+
+                            Sesizare sesizare = sesizareList.get(position);
+                            return view;
+                        }
+
+                    };
+                    listView1.setAdapter(adapter);
+                }
+            }
         }
     }
 }

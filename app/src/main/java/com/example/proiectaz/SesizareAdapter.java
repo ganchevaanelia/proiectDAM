@@ -3,22 +3,29 @@ package com.example.proiectaz;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Locale;
+
+
 
 public class SesizareAdapter extends BaseAdapter {
     private Context context;
     private int resource;
     private List<Sesizare> sesizareList;
     private LayoutInflater layoutInflater;
+
 
 
     public SesizareAdapter(Context context, int resource, List<Sesizare> sesizareList, LayoutInflater layoutInflater) {
@@ -49,19 +56,19 @@ public class SesizareAdapter extends BaseAdapter {
         final View view=inflater.inflate(R.layout.item_sesizari, parent, false);
         final Sesizare sesizare = sesizareList.get(position);
 
-        TextView tvCategorie=view.findViewById(R.id.tvCategorie);
+        final TextView tvCategorie=view.findViewById(R.id.tvCategorie);
         tvCategorie.setText(sesizare.getCategorie());
 
-        TextView tvSubcategorie=view.findViewById(R.id.tvSubcategorie);
+        final TextView tvSubcategorie=view.findViewById(R.id.tvSubcategorie);
         tvSubcategorie.setText(sesizare.getSubcategorie());
 
-        TextView tvDetaliiSesizare=view.findViewById(R.id.tvDetaliiSesizare);
+        final TextView tvDetaliiSesizare=view.findViewById(R.id.tvDetaliiSesizare);
         tvDetaliiSesizare.setText(sesizare.getDetaliiSesizare());
 
-        TextView tvRatingBarValue=view.findViewById(R.id.tvRatingBarValue);
+        final TextView tvRatingBarValue=view.findViewById(R.id.tvRatingBarValue);
         tvRatingBarValue.setText(sesizare.getParereRating());
 
-        TextView tvParereDetalii=view.findViewById(R.id.tvParereDetalii);
+        final TextView tvParereDetalii=view.findViewById(R.id.tvParereDetalii);
         tvParereDetalii.setText(sesizare.getParereDetalii());
 
         ImageView imageView=view.findViewById(R.id.imageViewSesizare);
@@ -80,6 +87,20 @@ public class SesizareAdapter extends BaseAdapter {
         else {
             imageView.setBackgroundResource(R.drawable.smile);
         }
+
+
+//        Button btnEditeaza=view.findViewById(R.id.btnSesizare);
+//
+//        btnEditeaza.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//Intent intent=new Intent(context, AdaugaSesizareActivity.class);
+//intent.putExtra(SesizariActivity.EDIT_SESIZARE, sesizareList.get(position));
+//               context.startActivity(intent);
+//
+//            }
+//        });
 
 
 
