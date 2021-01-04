@@ -1,7 +1,9 @@
 package com.example.proiectaz;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -37,10 +39,19 @@ Button loginOk=findViewById(R.id.loginOk);
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(), PaginaPersonalaActivity.class));
+                if (validationSuccess()) {
 
+                    startActivity(new Intent(getApplicationContext(), PaginaPersonalaActivity.class));
+
+                }
+                else{
+                     AlertDialog();
+                }
             }
         });
+
+
+
 
         login = findViewById(R.id.btnCreareCont);
         login.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +62,37 @@ Button loginOk=findViewById(R.id.loginOk);
             }
         });
     }
+    private Boolean validationSuccess(){
+        if(et1.getText().toString().isEmpty()) {
+            et1.setError("Introduceti numele de utilizator");
+            return false;
+        }
+        if(et1.length()<3) {
+            et1.setError("Numele de utilizator trebuie sa aiba cel putin 3 caractere");
+            return false;
+        }
 
+        if(et2.getText().toString().isEmpty()) {
+            et2.setError("Introduceti parola");
+            return false;
+        }
+        return true;
+    }
+
+    private void AlertDialog()
+    {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(ProfilActivity.this);
+        alertDialogBuilder.setMessage("Autentificare nereusita").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener()
+        {
+            public void onClick(DialogInterface dialog, int id)
+            {
+                dialog.cancel();
+            }
+        });
+
+        AlertDialog alert = alertDialogBuilder.create();
+        alert.show();
+
+    }
 
 }

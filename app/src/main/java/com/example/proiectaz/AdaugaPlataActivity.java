@@ -148,6 +148,8 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                                 codCvv.setError("Introduceti codul cvv");
                             else {
                                 SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.US);
+//                                if(radioGroup.getCheckedRadioButtonId()==-1)
+//                                    Toast.makeText(getApplicationContext(), "Alege taxa/impozit!", Toast.LENGTH_LONG).show();
 
                                 try {
                                     sdf.parse(afiseazaData.getText().toString());

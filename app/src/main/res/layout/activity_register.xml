@@ -159,6 +159,13 @@
             android:layout_marginTop="10dp"
             />
 
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="315dp"
+            android:layout_height="66dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent">
+
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -172,6 +179,8 @@
             android:text="@string/rbFemale"
             android:layout_marginTop="10dp"
             />
+
+        </RadioGroup>
 
     </LinearLayout>
 

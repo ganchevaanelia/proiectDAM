@@ -1,6 +1,7 @@
 package com.example.proiectaz;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -20,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class PaginaPersonalaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     private DrawerLayout drawer2;
+    //public static final int REQUEST_CODE = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,7 +116,13 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         return true;
     }
 
-
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
+//            Utilizator utilizator = (Utilizator) data.getSerializableExtra(ProfilActivity.Utilizator);
+//        }
+//    }
 
     @Override
     public void onBackPressed() { //daca meniul e deschis si apasam back il deschide, daca e inchis iese din app
