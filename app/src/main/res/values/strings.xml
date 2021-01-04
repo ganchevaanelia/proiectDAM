@@ -79,6 +79,7 @@
     <string name="sw_dark_mode">Dark mode</string>
     <string name="button_load_info">Incarca informatii</string>
     <string name="sterge_sesizare">Sterge sesizare</string>
+    <string name="informatii">Informatii</string>
     <string-array name="add_plata_pers">
         <item>FIZICA </item>
         <item>JURIDICA</item>

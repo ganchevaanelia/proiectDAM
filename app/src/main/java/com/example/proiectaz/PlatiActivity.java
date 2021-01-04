@@ -12,8 +12,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +68,34 @@ listView=findViewById(R.id.listViewPlati);
                 return false;
             }
         });
+
+        //firebase--------------------------
+        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        DatabaseReference myRef=database.getReference("Plati");
+      //  myRef.keepSynced(true);
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Iterable<DataSnapshot> plati = snapshot.getChildren();
+                for (DataSnapshot ds:plati) {
+
+                    Toast.makeText(PlatiActivity.this, ds.getValue().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    public void inserareFirebase(View view) {
+        Plata p = new Plata();
+        FirebaseDatabase database= FirebaseDatabase.getInstance();
+        DatabaseReference myRef=database.getReference("Plati");
+        DatabaseReference studentRef=myRef.child("Plata-"+p.getNume());
+        studentRef.setValue(p); //am scris in db
     }
 
     @Override
