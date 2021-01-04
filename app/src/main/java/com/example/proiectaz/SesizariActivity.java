@@ -106,7 +106,7 @@ public class SesizariActivity extends AppCompatActivity {
                     case R.id.activ_sesizari:
                         return true;
                     case R.id.activ_plati:
-                        startActivity(new Intent(getApplicationContext(), AdaugaPlataActivity.class));
+                        startActivity(new Intent(getApplicationContext(),PlatiActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
 

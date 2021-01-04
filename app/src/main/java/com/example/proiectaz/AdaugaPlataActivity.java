@@ -1,5 +1,6 @@
 package com.example.proiectaz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -21,6 +22,12 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -36,12 +43,14 @@ public class AdaugaPlataActivity extends AppCompatActivity {
     private TextView afiseazaData;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     ProgressDialog progressDialog;
+    private FirebaseDatabase database;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adauga_plata);
+        database=FirebaseDatabase.getInstance();
 
 //        button.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -143,6 +152,9 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                     else
                         if(etNrCard.getText().toString().isEmpty())
                             etNrCard.setError("Introduceti numarul cardului!");
+                                if(etNrCard.length()<16 && etNrCard.length()>16)
+                                     etNrCard.setError("Numar card INVALID!");
+
                         else
                             if(codCvv.getText().toString().isEmpty())
                                 codCvv.setError("Introduceti codul cvv");
@@ -160,7 +172,7 @@ public class AdaugaPlataActivity extends AppCompatActivity {
 
                                     String detalii = etDetalii.getText().toString();
                                     Float suma = Float.parseFloat(etSuma.getText().toString());
-                                    int nrCard = Integer.parseInt(etNrCard.getText().toString());
+                                    String nrCard=etNrCard.getText().toString();
                                     Date data = new Date(afiseazaData.getText().toString());
                                     int codCVV = Integer.parseInt(codCvv.getText().toString());
                                     RadioButton radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
@@ -170,11 +182,12 @@ public class AdaugaPlataActivity extends AppCompatActivity {
 
                                     Plata plata = new Plata(nume, tipPersoana, taxaImpozit, detalii, suma, nrCard, data, codCVV);
                                     //Toast.makeText(getApplicationContext(), plata.toString(), Toast.LENGTH_LONG).show();
-
+                                    writePlataInFirebase(plata);
                                     intent.putExtra(ADD_PLATA, plata);
                                     setResult(RESULT_OK, intent);
                                     //startActivity(intent);
                                     //startActivityForResult(intent, 200);
+
 
                                     finish();
 
@@ -188,4 +201,26 @@ public class AdaugaPlataActivity extends AppCompatActivity {
         });
 
     }
+
+    private void writePlataInFirebase(final Plata plata)
+    {
+        final DatabaseReference myRef = database.getReference("proiect-android-2560b-default-rtdb");
+        myRef.keepSynced(true); //sa se modifice automat daca schimb ceva in aplicatie
+
+        myRef.child("proiect-android-2560b-default-rtdb").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+               plata.setUid(myRef.child("proiect-android-2560b-default-rtdb").push().getKey()); //creaza nod caruia ii genereaza un id
+                myRef.child("Plata cu id-ul unic - " + plata.getUid()).child(plata.getUid()).setValue(plata); ///valori
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     }

@@ -5,23 +5,28 @@ import androidx.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Date;
 
+
 enum TipPersoana {FIZICA, JURIDICA};
 enum TaxaImpozit{TAXA, IMPOZIT}
 
 public class Plata implements Serializable {
 
+
+
+
+    private String uid; //trebuie sa schimb aici
     private String nume;
     private TipPersoana tipPersoana;
     private TaxaImpozit taxaImpozit;
     private String detalii;
     private float suma;
-    private int nrCard;
+    private String nrCard;
     private Date dataExpirarii;
     private int codCvv;
     private int imagine;
 
 
-    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii ,float suma, int nrCard, Date dataExpirarii, int codCvv, int imagine) {
+    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii ,float suma, String nrCard, Date dataExpirarii, int codCvv, int imagine) {
         this.nume = nume;
         this.tipPersoana = tipPersoana;
         this.taxaImpozit = taxaImpozit;
@@ -38,7 +43,7 @@ public class Plata implements Serializable {
 
     }
 
-    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii, Float suma, int nrCard, Date data, int codCVV) {
+    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii, Float suma, String nrCard, Date data, int codCVV) {
         this.nume = nume;
         this.tipPersoana = tipPersoana;
         this.taxaImpozit = taxaImpozit;
@@ -48,8 +53,12 @@ public class Plata implements Serializable {
         this.dataExpirarii = data;
         this.codCvv = codCVV;
     }
-
-
+    public String getUid() {
+        return uid;
+    }
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
     public String getNume() {
         return nume;
     }
@@ -77,11 +86,11 @@ public class Plata implements Serializable {
     }
 
 
-    public int getNrCard() {
+    public String getNrCard() {
         return nrCard;
     }
 
-    public void setNrCard(int nrCard) {
+    public void setNrCard(String nrCard) {
         this.nrCard = nrCard;
     }
 
