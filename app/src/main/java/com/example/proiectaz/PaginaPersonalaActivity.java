@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
 
@@ -131,5 +132,28 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.meniu_rapoarte, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.raportUtilizatori:
+                Intent raportUtilizatori = new Intent(this, RaportUtilizatori.class);
+                startActivity(raportUtilizatori);
+                break;
+            case R.id.raportSesizari:
+                Intent raportSesizari = new Intent(this, RaportSesizari.class);
+                startActivity(raportSesizari);
+                break;
+
+        }
+        return true;
     }
 }

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -70,6 +71,8 @@ public class RegisterActivity extends AppCompatActivity {
                                            } catch(Exception ex) {
                                                ex.printStackTrace();
                                            }
+//                                           RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
+//                                           String genPers=radioButton.getText().toString().toUpperCase();
 
                                            userDB.getUtilizatorDao().insertUtilizator(user);
 

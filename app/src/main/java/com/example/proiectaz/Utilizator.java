@@ -16,7 +16,8 @@ public class Utilizator implements Serializable {
     private String Email;
     private String Password;
     private String Telefon;
-    private Gen gen;
+   private Gen gen;
+    //private String genPersoana;
 
     public Utilizator( int id,String prenume, String nume, String username, String email, String password, String telefon, Gen gen) {
         ID = id;
@@ -27,6 +28,7 @@ public class Utilizator implements Serializable {
         Password = password;
         Telefon = telefon;
         this.gen = gen;
+        //genPersoana=genPersoana;
     }
 
     public Utilizator(String username, String password) {
@@ -100,6 +102,14 @@ public class Utilizator implements Serializable {
     public void setGen(Gen gen) {
         this.gen = gen;
     }
+
+//    public String getGenPersoana() {
+//        return genPersoana;
+//    }
+//
+//    public void setGenPersoana(String genPersoana) {
+//        this.genPersoana = genPersoana;
+//    }
 
     @Override
     public String toString() {

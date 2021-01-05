@@ -13,6 +13,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -39,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.meniu_simplu);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+
+
         setSupportActionBar(toolbar);
 
         switchDarkMode = findViewById(R.id.switchDarkMode);
@@ -68,10 +71,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        parser.execute("http://dataservice.accuweather.com/forecasts/v1/daily/1day/287994?apikey=cS1Aj5oNy3uhp74BjKyVcwQOnDgGNlPA&metric=true");
 
 
-
-        sharedPreferences = getSharedPreferences("night",0);
-        Boolean boolDark = sharedPreferences.getBoolean("night_mode",false);
-        if (boolDark){
+        sharedPreferences = getSharedPreferences("night", 0);
+        Boolean boolDark = sharedPreferences.getBoolean("night_mode", false);
+        if (boolDark) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
             switchDarkMode.setChecked(true);
         }
@@ -79,17 +81,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switchDarkMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
+                if (isChecked) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     switchDarkMode.setChecked(true);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("night_mode",true);
+                    editor.putBoolean("night_mode", true);
                     editor.commit();
-                }else {
+                } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     switchDarkMode.setChecked(false);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putBoolean("night_mode",false);
+                    editor.putBoolean("night_mode", false);
                     editor.commit();
 
                 }
@@ -99,19 +101,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-   public void openActivityProfil() {
-      Intent intent = new Intent(this, ProfilActivity.class);
-      startActivity(intent);
-   }
+    public void openActivityProfil() {
+        Intent intent = new Intent(this, ProfilActivity.class);
+        startActivity(intent);
+    }
 
 
-    public void openNews(){
-        Intent it=new Intent(this, AnunturiActivity.class);
+    public void openNews() {
+        Intent it = new Intent(this, AnunturiActivity.class);
         startActivity(it);
     }
 
-    public void openInfo(){
-        Intent it=new Intent(this, Informatii.class);
+    public void openInfo() {
+        Intent it = new Intent(this, Informatii.class);
         startActivity(it);
     }
 
@@ -128,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openNews();
                 break;
             case R.id.nav_info:
-               openInfo();
+                openInfo();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);
@@ -136,13 +138,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
-        public void onBackPressed() { //daca meniul e deschis si apasam back il deschide, daca e inchis iese din app
-            if (drawer.isDrawerOpen(GravityCompat.START)) {
-                drawer.closeDrawer(GravityCompat.START);
-            } else {
-                super.onBackPressed();
-            }
+    public void onBackPressed() { //daca meniul e deschis si apasam back il deschide, daca e inchis iese din app
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
         }
-
-
     }
+
+
+}

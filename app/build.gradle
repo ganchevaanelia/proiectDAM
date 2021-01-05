@@ -36,10 +36,18 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.0-beta01'
     implementation 'com.google.firebase:firebase-database:16.0.4'
+    implementation "com.halfhp.fig:figlib:1.0.7"
+
+    implementation "com.androidplot:androidplot-core:1.5.7"
+    implementation "com.halfhp.fig:figlib:1.0.7"
     implementation "androidx.room:room-runtime:2.2.6"
+    implementation 'com.androidplot:androidplot:0.6.1'
+
     testImplementation 'junit:junit:4.12'
     implementation "android.arch.persistence.room:runtime:1.0.0"
     annotationProcessor "android.arch.persistence.room:compiler:1.0.0"
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
 }
