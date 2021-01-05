@@ -26,8 +26,6 @@ public class SesizareAdapter extends BaseAdapter {
     private List<Sesizare> sesizareList;
     private LayoutInflater layoutInflater;
 
-
-
     public SesizareAdapter(Context context, int resource, List<Sesizare> sesizareList, LayoutInflater layoutInflater) {
         this.context = context;
         this.resource = resource;
@@ -73,47 +71,18 @@ public class SesizareAdapter extends BaseAdapter {
 
         ImageView imageView=view.findViewById(R.id.imageViewSesizare);
 
-
-
         if(tvRatingBarValue.getText().toString().equals("Recenzia ta : 1.0") || tvRatingBarValue.getText().toString().equals("Recenzia ta : 2.0"))
-
         {
            imageView.setBackgroundResource(R.drawable.sad);
-
         }
+
         else if (tvRatingBarValue.getText().toString().equals("Recenzia ta : 3.0")){
             imageView.setBackgroundResource(R.drawable.neutral);
+
         }
         else {
             imageView.setBackgroundResource(R.drawable.smile);
         }
-
-
-//        Button btnEditeaza=view.findViewById(R.id.btnSesizare);
-//
-//        btnEditeaza.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//Intent intent=new Intent(context, AdaugaSesizareActivity.class);
-//intent.putExtra(SesizariActivity.EDIT_SESIZARE, sesizareList.get(position));
-//               context.startActivity(intent);
-//
-//            }
-//        });
-
-
-
-
-//        Button btnStergeSesizare=view.findViewById(R.id.btnStergeSesizare);
-//
-//btnStergeSesizare.setOnClickListener(new View.OnClickListener() {
-//    @Override
-//    public void onClick(View v) {
-//        final Sesizare sesizare=sesizareList.get(position);
-//        final SesizareAdapter adapter=
-//    }
-//});
 
 
         return view;

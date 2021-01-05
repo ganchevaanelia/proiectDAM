@@ -132,10 +132,11 @@ public class PlatiActivity extends AppCompatActivity {
         adaugaPlata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                new Task(PlatiActivity.this).execute();
+                new Task(PlatiActivity.this).execute();
 
-                Intent intent = new Intent(getApplicationContext(), AdaugaPlataActivity.class);
-                startActivityForResult(intent, REQUEST_CODE);
+
+//                Intent intent = new Intent(getApplicationContext(), AdaugaPlataActivity.class);
+//                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 

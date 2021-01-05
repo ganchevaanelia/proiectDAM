@@ -134,9 +134,6 @@ public class SesizariActivity extends AppCompatActivity {
             if (sesizare != null) {
                 sesizareList.add(sesizare);
 
-//                ArrayAdapter<Sesizare> adapter = new ArrayAdapter<Sesizare>(SesizariActivity.this,
-//////                        android.R.layout.simple_list_item_1, sesizareList);
-
 
                 SesizareAdapter adapter = new SesizareAdapter(getApplicationContext(), R.layout.item_sesizari, sesizareList, getLayoutInflater()) {
                     //getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()

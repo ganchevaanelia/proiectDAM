@@ -43,11 +43,14 @@
         android:layout_height="wrap_content"
         android:onClick="loadInfo"
         android:text="@string/button_load_info"
-         />
+        tools:ignore="OnClick" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvInfo">
+        android:id="@+id/tvInfo"
+        android:background="@color/GrayLight"
+
+        >
 
     </TextView>
 </LinearLayout>
