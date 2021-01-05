@@ -54,18 +54,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState(); //se roteste putin hamburger meniu-ul
 
 
-//  ParsareJSON parser = new ParsareJSON(){
-//            @Override
-//            protected void onPostExecute(List<Double> doubles) {
-//                TextView textView=findViewById(R.id.tvTemp);
-//                StringBuilder builder = new StringBuilder();
-//                builder.append("Temperatura minima: ").append(doubles.get(0)).append(", maxima: ").
-//                        append(doubles.get(1));
-//                textView.setText(builder.toString());
-//            }
-//        };
+  ParsareJSON parser = new ParsareJSON(){
+            @Override
+            protected void onPostExecute(List<Double> doubles) {
+                TextView textView=findViewById(R.id.tvTemp);
+                StringBuilder builder = new StringBuilder();
+                builder.append("Temperatura minima: ").append(doubles.get(0)).append(", maxima: ").
+                        append(doubles.get(1));
+                textView.setText(builder.toString());
+            }
+        };
 
- //       parser.execute("http://dataservice.accuweather.com/forecasts/v1/daily/1day/287994?apikey=cS1Aj5oNy3uhp74BjKyVcwQOnDgGNlPA&metric=true");
+        parser.execute("http://dataservice.accuweather.com/forecasts/v1/daily/1day/287994?apikey=cS1Aj5oNy3uhp74BjKyVcwQOnDgGNlPA&metric=true");
 
 
 

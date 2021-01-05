@@ -149,8 +149,8 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:hint="@string/numar_card_hint"
-            android:inputType="number"
-            android:textSize="17sp"/>
+            android:inputType="text"
+            android:textSize="17sp" />
         <TextView
             android:id="@+id/tvDataExpirareCard"
             android:layout_width="match_parent"

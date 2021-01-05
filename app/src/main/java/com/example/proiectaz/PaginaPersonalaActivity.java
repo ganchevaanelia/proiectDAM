@@ -51,7 +51,7 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.activ_plati:
-                        startActivity(new Intent(getApplicationContext(), AdaugaPlataActivity.class));
+                        startActivity(new Intent(getApplicationContext(), PlatiActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -59,7 +59,7 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
                         return true;
 
                     case R.id.activ_sesizari:
-                        startActivity(new Intent(getApplicationContext(), AdaugaSesizareActivity.class));
+                        startActivity(new Intent(getApplicationContext(), SesizariActivity.class));
                         overridePendingTransition(0, 0);
                         return true;
 
