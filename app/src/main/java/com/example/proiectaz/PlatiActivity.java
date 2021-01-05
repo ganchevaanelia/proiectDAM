@@ -69,7 +69,7 @@ listView=findViewById(R.id.listViewPlati);
             }
         });
 
-        //firebase--------------------------
+     /*   //firebase--------------------------
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference myRef=database.getReference("Plati");
       //  myRef.keepSynced(true);
@@ -87,16 +87,16 @@ listView=findViewById(R.id.listViewPlati);
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-        });
+        });*/
     }
 
-    public void inserareFirebase(View view) {
+   /* public void inserareFirebase(View view) {
         Plata p = new Plata();
         FirebaseDatabase database= FirebaseDatabase.getInstance();
         DatabaseReference myRef=database.getReference("Plati");
         DatabaseReference studentRef=myRef.child("Plata-"+p.getNume());
         studentRef.setValue(p); //am scris in db
-    }
+    }*/
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
