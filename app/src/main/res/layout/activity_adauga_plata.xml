@@ -86,13 +86,15 @@
                 android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Taxa" />
+                android:text="Taxa"
+                style="@style/RadioButtonStyle"/>
 
             <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Impozit" />
+                android:text="Impozit"
+                style="@style/RadioButtonStyle"/>
         </RadioGroup>
 
 

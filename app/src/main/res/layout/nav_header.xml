@@ -16,13 +16,14 @@
         android:maxWidth="40dp"
         android:maxHeight="40dp"
         android:scaleType="fitCenter"
+
         android:src="@drawable/stema" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bine_ati_venit"
-        android:textSize="17dp"
+        style="@style/FontStyleTextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
 <!--    <TextView-->

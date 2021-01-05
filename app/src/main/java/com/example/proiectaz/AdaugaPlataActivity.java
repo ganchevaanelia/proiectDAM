@@ -52,37 +52,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_adauga_plata);
         database=FirebaseDatabase.getInstance();
 
-//        button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                progressDialog=new ProgressDialog(AdaugaPlataActivity.this);
-//
-//                progressDialog.show();
-//                progressDialog.setContentView(R.layout.progress_dialog);
-//                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
-//                Thread timer=new Thread(){
-//                    @Override
-//                    public void run() {
-//                        try {
-//                            sleep(3500);
-//                            Intent it=new Intent(getApplicationContext(), PlatiActivity.class);
-//                            startActivity(it);
-//                            progressDialog.dismiss();
-//                            finish();
-//                            super.run();
-//
-//
-//                        }
-//                        catch (InterruptedException e){
-//                            e.printStackTrace();
-//                        }
-//
-//                    }
-//                };
-//                timer.start();
-//            }
-//        });
-
 
         final Spinner spinnerPers=findViewById(R.id.spinner_TipulPersonei);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -188,9 +157,7 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                                     //startActivity(intent);
                                     //startActivityForResult(intent, 200);
 
-
                                     finish();
-
 
                                 } catch (IllegalArgumentException | ParseException e) {
                                     e.printStackTrace();

@@ -1,34 +1,42 @@
 package com.example.proiectaz;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
-public class Task extends AsyncTask<Void, Void, Void> {
-    private Context mycontext;
+public class Task extends AsyncTask<Void, Void, Boolean> {
+    private Activity activity;
+    private ProgressDialog progressDialog;
 
-    public Task(Context c) {
-        this.mycontext = c;
-
+    public Task(Activity activity){
+        this.activity = activity;
 
     }
-    Dialog dialog;
     @Override
     protected void onPreExecute() {
-        super.onPreExecute();
-        dialog = ProgressDialog.show(mycontext, "Updating ..", "Please wait......");
+                progressDialog=new ProgressDialog(activity);
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_dialog);
+                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
-        return null;
-    }
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        if (dialog.isShowing()) {
-            dialog.dismiss();
+    protected Boolean doInBackground(Void... voids) {
+        try {
+            Thread.sleep(3500);
+        } catch (InterruptedException e) {
         }
+        progressDialog.dismiss();
+        return true;
+    }
+
+
+    @Override
+    protected void onPostExecute(Boolean rez) {
+        activity.startActivity(new Intent(activity,AdaugaPlataActivity.class));
     }
 }
