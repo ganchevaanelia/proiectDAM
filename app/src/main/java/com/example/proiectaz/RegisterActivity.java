@@ -1,7 +1,12 @@
 package com.example.proiectaz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.DatabaseConfiguration;
+import androidx.room.InvalidationTracker;
+import androidx.room.Room;
+import androidx.sqlite.db.SupportSQLiteOpenHelper;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,6 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import static com.example.proiectaz.Gen.MASCULIN;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -26,12 +33,15 @@ public class RegisterActivity extends AppCompatActivity {
     String password;
     RadioGroup  gen;
 
-
+private static UtilizatorDB userDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        userDB = Room.databaseBuilder(RegisterActivity.this, UtilizatorDB.class, "UtilizatorDB")
+                .allowMainThreadQueries().fallbackToDestructiveMigration().build();
 
         btn3=findViewById(R.id.btnRegister);
         etUsername=findViewById(R.id.etUsernameRegister);
@@ -48,7 +58,23 @@ public class RegisterActivity extends AppCompatActivity {
 
                                        if (validationSuccess()) {
 
-                                           Intent it=new Intent(RegisterActivity.this, ProfilActivity.class);
+                                           Utilizator user = new Utilizator();
+                                           user.setNume(etNume.getText().toString());
+                                           user.setPrenume(etPrenume.getText().toString());
+                                           user.setUsername(etUsername.getText().toString());
+                                           user.setPassword(etPassword.getText().toString());
+                                           user.setEmail(etEmail.getText().toString());
+                                           user.setTelefon(etTelefon.getText().toString());
+
+                                           try {
+                                               user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
+                                           } catch(Exception ex) {
+                                               ex.printStackTrace();
+                                           }
+
+                                           userDB.getUtilizatorDao().insertUtilizator(user);
+
+                                           Intent it=new Intent(getApplicationContext(), ProfilActivity.class);
                                            username=etUsername.getText().toString();
                                            password=etPassword.getText().toString();
                                            it.putExtra("user", username);
