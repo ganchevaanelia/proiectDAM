@@ -17,8 +17,7 @@ public class Sesizare implements Serializable {
     private String ParereDetalii;
     private int utilizatorID;
 
-    public Sesizare(int id) {
-        this.id = id;
+    public Sesizare() {
     }
 
     public Sesizare(int id, String categorie, String subcategorie, String detaliiSesizare, String parereRating, String parereDetalii, int utilizatorID) {

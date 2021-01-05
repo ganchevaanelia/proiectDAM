@@ -26,6 +26,7 @@ public class SesizareAdapter extends BaseAdapter {
     private List<Sesizare> sesizareList;
     private LayoutInflater layoutInflater;
 
+
     public SesizareAdapter(Context context, int resource, List<Sesizare> sesizareList, LayoutInflater layoutInflater) {
         this.context = context;
         this.resource = resource;

@@ -1,6 +1,7 @@
 package com.example.proiectaz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -23,6 +24,8 @@ import java.util.Locale;
 
 public class AdaugaSesizareActivity extends AppCompatActivity {
     public static final String ADD_SESIZARE = "AdaugaSesizare";
+
+    public static UtilizatorDB userDB;
 
 
     Spinner spinnercategorieParent, spinnercategorieChild;
@@ -195,6 +198,12 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
                         String detaliiRating = parereRating.getText().toString();
 
                         Sesizare sesizare = new Sesizare(categorie, subcategorie, detaliiSesizare, tvDispayRating, detaliiRating);
+                        userDB = Room.databaseBuilder(AdaugaSesizareActivity.this, UtilizatorDB.class, "UtilizatorDB").allowMainThreadQueries().build();
+                        sesizare.setCategorie(spinnercategorieParent.getSelectedItem().toString());
+                        sesizare.setSubcategorie(spinnercategorieChild.getSelectedItem().toString());
+                        sesizare.setDetaliiSesizare(etDetaliiSesizare.getText().toString());
+
+                        userDB.getUtilizatorDao().insertSesizare(sesizare);
 
                         intent.putExtra(ADD_SESIZARE, sesizare);
                         setResult(RESULT_OK, intent);

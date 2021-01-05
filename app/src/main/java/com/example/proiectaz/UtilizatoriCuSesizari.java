@@ -1,6 +1,7 @@
 package com.example.proiectaz;
 
 import androidx.room.Embedded;
+import androidx.room.Entity;
 import androidx.room.Relation;
 
 import java.io.Serializable;
@@ -15,4 +16,5 @@ public class UtilizatoriCuSesizari {
             entityColumn = "utilizatorID"
     )
     public List<Sesizare> listasesizari;
+
 }
