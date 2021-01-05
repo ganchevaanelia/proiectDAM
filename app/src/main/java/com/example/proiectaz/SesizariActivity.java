@@ -164,6 +164,7 @@ public class SesizariActivity extends AppCompatActivity {
                     sesizareList.get(poz).setParereRating(sesizare.getParereRating());
                     sesizareList.get(poz).setParereDetalii(sesizare.getParereDetalii());
 
+
                     SesizareAdapter adapter = new SesizareAdapter(getApplicationContext(), R.layout.item_sesizari, sesizareList, getLayoutInflater()) {
 
                         @Override

@@ -1,5 +1,6 @@
 package com.example.proiectaz;
 
+
 import androidx.room.TypeConverter;
 
 public class GenConvertor {

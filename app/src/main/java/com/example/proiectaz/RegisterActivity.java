@@ -33,15 +33,14 @@ public class RegisterActivity extends AppCompatActivity {
     String password;
     RadioGroup  gen;
 
-private static UtilizatorDB userDB;
+    public static UtilizatorDB userDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        userDB = Room.databaseBuilder(RegisterActivity.this, UtilizatorDB.class, "UtilizatorDB")
-                .allowMainThreadQueries().fallbackToDestructiveMigration().build();
+        userDB = Room.databaseBuilder(RegisterActivity.this, UtilizatorDB.class, "UtilizatorDB").allowMainThreadQueries().fallbackToDestructiveMigration().build();
 
         btn3=findViewById(R.id.btnRegister);
         etUsername=findViewById(R.id.etUsernameRegister);
