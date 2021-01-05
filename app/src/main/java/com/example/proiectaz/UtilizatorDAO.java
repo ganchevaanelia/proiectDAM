@@ -20,12 +20,14 @@ public interface UtilizatorDAO {
     @Query("delete from utilizatori")
     void deleteAll();
 
-    @SuppressWarnings(RoomWarnings.CURSOR_MISMATCH)
     @Transaction
     @Query("SELECT * FROM utilizatori")
     public List<UtilizatoriCuSesizari> getUtilizatoriCuSesizari();
 
     @Query("SELECT * FROM sesizari")
     public List<Sesizare> getSesizari();
+
+    @Insert
+    public void insertSesizare(Sesizare sesizare);
 
 }
