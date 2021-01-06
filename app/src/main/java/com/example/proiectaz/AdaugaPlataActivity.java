@@ -72,7 +72,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                         AdaugaPlataActivity.this,
                         mDateSetListener,
                         year, month, day);
-                //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
                 dialog.show();
             }
@@ -102,8 +101,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
 
         final EditText codCvv=findViewById(R.id.etCodCVV);
         final  String DATE_FORMAT = "dd/MM/yyyy";
-        //final Intent intent = ();
-        //final Intent intent=new Intent(this, PlatiActivity.class);
         Button button=findViewById(R.id.btnPlateste);
         button.setOnClickListener(new View.OnClickListener(){
 
@@ -112,7 +109,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                 if(etNume.getText().toString().isEmpty())
                     etNume.setError("Introduceti numele si prenumele");
                 else
-                    //if(!checkBox1.isChecked() || !checkBox2.isChecked())
                 if(etDetalii.getText().toString().isEmpty())
                     etDetalii.setError("Introduceti denumirea taxei/impozitului");
                 else
@@ -129,8 +125,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                                 codCvv.setError("Introduceti codul cvv");
                             else {
                                 SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT, Locale.US);
-//                                if(radioGroup.getCheckedRadioButtonId()==-1)
-//                                    Toast.makeText(getApplicationContext(), "Alege taxa/impozit!", Toast.LENGTH_LONG).show();
 
                                 try {
                                     sdf.parse(afiseazaData.getText().toString());
@@ -150,12 +144,9 @@ public class AdaugaPlataActivity extends AppCompatActivity {
 
 
                                     Plata plata = new Plata(nume, tipPersoana, taxaImpozit, detalii, suma, nrCard, data, codCVV);
-                                    //Toast.makeText(getApplicationContext(), plata.toString(), Toast.LENGTH_LONG).show();
                                     writePlataInFirebase(plata);
                                     intent.putExtra(ADD_PLATA, plata);
                                     setResult(RESULT_OK, intent);
-                                    //startActivity(intent);
-                                    //startActivityForResult(intent, 200);
 
                                     finish();
 

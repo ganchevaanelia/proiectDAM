@@ -31,7 +31,7 @@ public class PlataAdapter extends BaseAdapter {
 
 
     public PlataAdapter(Context context, int resource, List<Plata> plataList, LayoutInflater layoutInflater, int image) {
-        //super(context, resource, plataList);
+
         this.context = context;
         this.resource = resource;
         this.plataList= plataList;

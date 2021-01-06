@@ -125,8 +125,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 openActivityProfil();
                 break;
             case R.id.nav_news:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,
-//                        new NewsFragment()).commit();
                 openNews();
                 break;
             case R.id.nav_info:

@@ -30,14 +30,6 @@ public class AfiseazaRaportUtilizatori  extends View {
         random = new Random();
     }
 
-   /* public AfiseazaRaportUtilizatori(Context context, @Nullable AttributeSet attrs, Map<Enum<Gen>, Integer> source, Paint paint, List<Enum<Gen>> labels, Random random) {
-        super(context, attrs);
-        this.source = source;
-        this.paint = paint;
-        this.labels = labels;
-        this.random = random;
-    }*/
-
 
     @Override
     protected void onDraw(Canvas canvas) {
