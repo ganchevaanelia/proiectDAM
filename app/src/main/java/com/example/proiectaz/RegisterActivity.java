@@ -59,20 +59,19 @@ public class RegisterActivity extends AppCompatActivity {
                                        if (validationSuccess()) {
 
                                            Utilizator user = new Utilizator();
-                                           user.setNume(etNume.getText().toString());
-                                           user.setPrenume(etPrenume.getText().toString());
-                                           user.setUsername(etUsername.getText().toString());
-                                           user.setPassword(etPassword.getText().toString());
-                                           user.setEmail(etEmail.getText().toString());
-                                           user.setTelefon(etTelefon.getText().toString());
+                                           user.setNume(etNume.getText().toString().trim());
+                                           user.setPrenume(etPrenume.getText().toString().trim());
+                                           user.setUsername(etUsername.getText().toString().trim());
+                                           user.setPassword(etPassword.getText().toString().trim());
+                                           user.setEmail(etEmail.getText().toString().trim());
+                                           user.setTelefon(etTelefon.getText().toString().trim());
 
                                            try {
                                                user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
                                            } catch(Exception ex) {
                                                ex.printStackTrace();
                                            }
-//                                           RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
-//                                           String genPers=radioButton.getText().toString().toUpperCase();
+
 
                                            userDB.getUtilizatorDao().insertUtilizator(user);
 

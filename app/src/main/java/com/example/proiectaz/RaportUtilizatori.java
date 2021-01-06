@@ -1,17 +1,10 @@
 package com.example.proiectaz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.TypeConverters;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
-import com.androidplot.xy.LineAndPointFormatter;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYPlot;
-import com.androidplot.xy.XYSeries;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +17,7 @@ public class RaportUtilizatori extends AppCompatActivity {
 
     ArrayList<Utilizator> list;
     LinearLayout layout;
-    Map<Enum, Integer> source;
+    Map<Enum<Gen>, Integer> source;
 //    RadioGroup gen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,13 +63,13 @@ public class RaportUtilizatori extends AppCompatActivity {
         layout.addView(new AfiseazaRaportUtilizatori(getApplicationContext(), source));
     }
 
-    private Map<Enum, Integer> getSource(List<Utilizator> movies)
+    private Map<Enum<Gen>, Integer> getSource(List<Utilizator> movies)
     {
         if(movies==null || movies.isEmpty())
-            return new HashMap<>();
+            return new HashMap<Enum<Gen>, Integer>();
         else
         {
-            Map<Enum, Integer> results = new HashMap<>();
+            Map<Enum<Gen>, Integer> results = new HashMap<>();
             for(Utilizator movie: movies)
                 if(results.containsKey(movie.getGen()))
                     results.put(movie.getGen(), results.get(movie.getGen())+1);

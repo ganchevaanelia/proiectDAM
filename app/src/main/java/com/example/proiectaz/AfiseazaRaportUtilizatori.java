@@ -4,7 +4,10 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,12 +15,12 @@ import java.util.Map;
 import java.util.Random;
 
 public class AfiseazaRaportUtilizatori  extends View {
-    private Map<Enum, Integer> source;
+    private Map<Enum<Gen>, Integer> source;
     private Paint paint;
-    private List<Enum> labels;
+    private List<Enum<Gen>> labels;
     private Random random;
 
-    public AfiseazaRaportUtilizatori(Context context, Map<Enum, Integer> source)
+    public AfiseazaRaportUtilizatori(Context context, Map<Enum<Gen>, Integer> source)
     {
         super(context);
         this.source = source;
@@ -26,6 +29,15 @@ public class AfiseazaRaportUtilizatori  extends View {
         labels = new ArrayList<>(source.keySet());
         random = new Random();
     }
+
+   /* public AfiseazaRaportUtilizatori(Context context, @Nullable AttributeSet attrs, Map<Enum<Gen>, Integer> source, Paint paint, List<Enum<Gen>> labels, Random random) {
+        super(context, attrs);
+        this.source = source;
+        this.paint = paint;
+        this.labels = labels;
+        this.random = random;
+    }*/
+
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -56,18 +68,19 @@ public class AfiseazaRaportUtilizatori  extends View {
                         1 + random.nextInt(254));
                 paint.setColor(color);
 
-                float x1 = paddW + i * widthOfElement;
-                float y1 = (float) ((1 - source.get(labels.get(i)) / maxValue) * availableHeight + paddH);
-                float x2 = x1 + widthOfElement;
-                float y2 = paddH + availableHeight;
+                    float x1 = paddW + i * widthOfElement;
+                    float y1 = (float) ((1 - source.get(labels.get(i)) / maxValue) * availableHeight + paddH);
 
-                canvas.drawRect(x1, y1, x2, y2, paint);
-                drawLabel(canvas, x1, widthOfElement, paddH, availableHeight, labels.get(i));
-            }
+                    float x2 = x1 + widthOfElement;
+                    float y2 = paddH + availableHeight;
+
+                    canvas.drawRect(x1, y1, x2, y2, paint);
+                    drawLabel(canvas, x1, widthOfElement, paddH, availableHeight, labels.get(i));
+                }
         }
     }
 
-    private void drawLabel(Canvas canvas, float x1, float widthOfElement, float paddH, float availableHeight, Enum label) {
+    private void drawLabel(Canvas canvas, float x1, float widthOfElement, float paddH, float availableHeight, Enum<Gen> label) {
         paint.setColor(Color.BLACK);
         paint.setTextSize((float) (0.2* widthOfElement));
         float x = x1 + widthOfElement / 2;
