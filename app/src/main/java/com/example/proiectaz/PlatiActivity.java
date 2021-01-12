@@ -35,6 +35,7 @@ public class PlatiActivity extends AppCompatActivity {
     final List<String> plati = new ArrayList<>();
     FirebaseDatabase database;
     PlataAdapter adapter;
+    Button btnGrafic;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,18 @@ public class PlatiActivity extends AppCompatActivity {
         listView = findViewById(R.id.listViewPlati);
         database = FirebaseDatabase.getInstance();
         listView.setAdapter(adapter);
+        btnGrafic=findViewById(R.id.Grafic);
+        btnGrafic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ArrayList<Plata> list=new ArrayList<>(); //punem toate filmele
+                for (Plata utilizator:plataList)
+                    list.add(utilizator);
+                Intent raportUtilizatori = new Intent(getApplicationContext(), RaportUtilizatori.class);
+                raportUtilizatori.putExtra("list", list);
+                startActivity(raportUtilizatori);
+            }
+        });
         //restaurare();
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 

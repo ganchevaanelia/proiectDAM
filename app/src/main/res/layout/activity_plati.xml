@@ -66,19 +66,19 @@
             <!--        android:onClick="arataListaPlati"-->
             <!--        android:text="@string/plati_efectuate" />-->
 
-<!--            <Button-->
-<!--                android:id="@+id/importa"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_gravity="left"-->
-<!--                android:layout_marginStart="0dp"-->
+            <Button
+                android:id="@+id/Grafic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginStart="0dp"
 
-<!--                android:layout_marginTop="1dp"-->
-<!--                android:background="@drawable/buttom_rounded"-->
-<!--                android:gravity="center"-->
-<!--                android:text="Importa"-->
-<!--                android:textColor="@android:color/white"-->
-<!--                android:textStyle="italic" />-->
+                android:layout_marginTop="1dp"
+                android:background="@drawable/buttom_rounded"
+                android:gravity="center"
+                android:text="Importa"
+                android:textColor="@android:color/white"
+                android:textStyle="italic" />
 
             <ListView
                 android:id="@+id/listViewPlati"

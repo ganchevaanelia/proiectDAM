@@ -67,8 +67,8 @@ Button loginOk=findViewById(R.id.loginOk);
             et1.setError("Introduceti numele de utilizator");
             return false;
         }
-        if(et1.length()<3) {
-            et1.setError("Numele de utilizator trebuie sa aiba cel putin 3 caractere");
+        if(et1.length()<4) {
+            et1.setError("Numele de utilizator trebuie sa aiba cel putin 4 caractere");
             return false;
         }
 

@@ -16,10 +16,10 @@ public class Utilizator implements Serializable {
     private String Email;
     private String Password;
     private String Telefon;
-   private Gen gen;
-    //private String genPersoana;
+   //private Gen gen;
+    private String genPersoana;
 
-    public Utilizator( int id,String prenume, String nume, String username, String email, String password, String telefon, Gen gen) {
+    public Utilizator( int id,String prenume, String nume, String username, String email, String password, String telefon, String gen) {
         ID = id;
         Prenume = prenume;
         Nume = nume;
@@ -27,8 +27,8 @@ public class Utilizator implements Serializable {
         Email = email;
         Password = password;
         Telefon = telefon;
-        this.gen = gen;
-        //genPersoana=genPersoana;
+       // this.gen = gen;
+        genPersoana=genPersoana;
     }
 
     public Utilizator(String username, String password) {
@@ -95,21 +95,21 @@ public class Utilizator implements Serializable {
         Telefon = telefon;
     }
 
-    public Gen getGen() {
-        return gen;
-    }
-
-    public void setGen(Gen gen) {
-        this.gen = gen;
-    }
-
-//    public String getGenPersoana() {
-//        return genPersoana;
+//    public Gen getGen() {
+//        return gen;
 //    }
 //
-//    public void setGenPersoana(String genPersoana) {
-//        this.genPersoana = genPersoana;
+//    public void setGen(Gen gen) {
+//        this.gen = gen;
 //    }
+
+    public String getGenPersoana() {
+        return genPersoana;
+    }
+
+    public void setGenPersoana(String genPersoana) {
+        this.genPersoana = genPersoana;
+    }
 
     @Override
     public String toString() {
@@ -121,7 +121,7 @@ public class Utilizator implements Serializable {
                 ", Email='" + Email + '\'' +
                 ", Password='" + Password + '\'' +
                 ", Telefon='" + Telefon + '\'' +
-                ", gen=" + gen +
+                ", gen=" + genPersoana +
                 '}';
     }
 }

@@ -7,7 +7,7 @@ import java.util.Date;
 
 
 enum TipPersoana {FIZICA, JURIDICA};
-enum TaxaImpozit{TAXA, IMPOZIT}
+//enum TaxaImpozit{TAXA, IMPOZIT}
 
 public class Plata implements Serializable {
 
@@ -17,7 +17,8 @@ public class Plata implements Serializable {
     private String uid; //trebuie sa schimb aici
     private String nume;
     private TipPersoana tipPersoana;
-    private TaxaImpozit taxaImpozit;
+    //private TaxaImpozit taxaImpozit;
+    private String taxaImpozit;
     private String detalii;
     private float suma;
     private String nrCard;
@@ -26,7 +27,7 @@ public class Plata implements Serializable {
     private int imagine;
 
 
-    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii ,float suma, String nrCard, Date dataExpirarii, int codCvv, int imagine) {
+    public Plata(String nume, TipPersoana tipPersoana,String taxaImpozit, String detalii ,float suma, String nrCard, Date dataExpirarii, int codCvv, int imagine) {
         this.nume = nume;
         this.tipPersoana = tipPersoana;
         this.taxaImpozit = taxaImpozit;
@@ -43,7 +44,7 @@ public class Plata implements Serializable {
 
     }
 
-    public Plata(String nume, TipPersoana tipPersoana, TaxaImpozit taxaImpozit, String detalii, Float suma, String nrCard, Date data, int codCVV) {
+    public Plata(String nume, TipPersoana tipPersoana, String taxaImpozit, String detalii, Float suma, String nrCard, Date data, int codCVV) {
         this.nume = nume;
         this.tipPersoana = tipPersoana;
         this.taxaImpozit = taxaImpozit;
@@ -126,14 +127,22 @@ public class Plata implements Serializable {
         this.detalii = detalii;
     }
 
-    public TaxaImpozit getTaxaImpozit() {
+//    public TaxaImpozit getTaxaImpozit() {
+//        return taxaImpozit;
+//    }
+//
+//    public void setTaxaImpozit(TaxaImpozit taxaImpozit) {
+//        this.taxaImpozit = taxaImpozit;
+//    }
+
+
+    public String getTaxaImpozit() {
         return taxaImpozit;
     }
 
-    public void setTaxaImpozit(TaxaImpozit taxaImpozit) {
+    public void setTaxaImpozit(String taxaImpozit) {
         this.taxaImpozit = taxaImpozit;
     }
-
 
     @Override
     public String toString() {
