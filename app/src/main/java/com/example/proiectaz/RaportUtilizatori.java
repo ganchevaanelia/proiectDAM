@@ -1,17 +1,11 @@
-package com.example.proiectaz;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.TypeConverters;
+package com.example.proiectaz;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 
-import com.androidplot.xy.LineAndPointFormatter;
-import com.androidplot.xy.SimpleXYSeries;
-import com.androidplot.xy.XYPlot;
-import com.androidplot.xy.XYSeries;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,10 +16,14 @@ import java.util.Map;
 public class RaportUtilizatori extends AppCompatActivity {
 
 
-    ArrayList<Utilizator> list;
+    ArrayList<Plata> list;
     LinearLayout layout;
-    Map<Enum, Integer> source;
-//    RadioGroup gen;
+
+    Map<String, Integer> source;
+
+    //Map<Enum<Gen>, Integer> source;
+
+    //    RadioGroup gen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +60,7 @@ public class RaportUtilizatori extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        list = (ArrayList<Utilizator>) intent.getSerializableExtra("list");
+        list = (ArrayList<Plata>) intent.getSerializableExtra("list");
 
         source = getSource(list);
 
@@ -70,20 +68,21 @@ public class RaportUtilizatori extends AppCompatActivity {
         layout.addView(new AfiseazaRaportUtilizatori(getApplicationContext(), source));
     }
 
-    private Map<Enum, Integer> getSource(List<Utilizator> movies)
-    {
-        if(movies==null || movies.isEmpty())
+
+    private Map<String, Integer> getSource(List<Plata> plati) {
+        if (plati == null || plati.isEmpty())
             return new HashMap<>();
-        else
-        {
-            Map<Enum, Integer> results = new HashMap<>();
-            for(Utilizator movie: movies)
-                if(results.containsKey(movie.getGen()))
-                    results.put(movie.getGen(), results.get(movie.getGen())+1);
+        else {
+            Map<String, Integer> results = new HashMap<>();
+            for (Plata plata : plati)
+                if (results.containsKey(plata.getTaxaImpozit()))
+                    results.put(plata.getTaxaImpozit(), results.get(plata.getTaxaImpozit()) + 1);
                 else
-                    results.put(movie.getGen(), 1);
+                    results.put(plata.getTaxaImpozit(),1);
             return results;
+
+
         }
     }
-
 }
+

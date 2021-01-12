@@ -53,43 +53,43 @@ public class RegisterActivity extends AppCompatActivity {
         gen=findViewById(R.id.radioGroup2);
 
         btn3.setOnClickListener(new View.OnClickListener() {
-                                   @Override
-                                   public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
 
-                                       if (validationSuccess()) {
+                if (validationSuccess()) {
 
-                                           Utilizator user = new Utilizator();
-                                           user.setNume(etNume.getText().toString());
-                                           user.setPrenume(etPrenume.getText().toString());
-                                           user.setUsername(etUsername.getText().toString());
-                                           user.setPassword(etPassword.getText().toString());
-                                           user.setEmail(etEmail.getText().toString());
-                                           user.setTelefon(etTelefon.getText().toString());
+                    Utilizator user = new Utilizator();
+                    user.setNume(etNume.getText().toString());
+                    user.setPrenume(etPrenume.getText().toString());
+                    user.setUsername(etUsername.getText().toString());
+                    user.setPassword(etPassword.getText().toString());
+                    user.setEmail(etEmail.getText().toString());
+                    user.setTelefon(etTelefon.getText().toString());
 
-                                           try {
-                                               user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
-                                           } catch(Exception ex) {
-                                               ex.printStackTrace();
-                                           }
+                    try {
+                        user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
+                    } catch(Exception ex) {
+                        ex.printStackTrace();
+                    }
 //                                           RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
 //                                           String genPers=radioButton.getText().toString().toUpperCase();
 
-                                           userDB.getUtilizatorDao().insertUtilizator(user);
+                    userDB.getUtilizatorDao().insertUtilizator(user);
 
-                                           Intent it=new Intent(getApplicationContext(), ProfilActivity.class);
-                                           username=etUsername.getText().toString();
-                                           password=etPassword.getText().toString();
-                                           it.putExtra("user", username);
-                                           it.putExtra("password", password);
-                                           startActivity(it);
-                                           finish();
+                    Intent it=new Intent(getApplicationContext(), ProfilActivity.class);
+                    username=etUsername.getText().toString();
+                    password=etPassword.getText().toString();
+                    it.putExtra("user", username);
+                    it.putExtra("password", password);
+                    startActivity(it);
+                    finish();
 
-                                       }
-                                       else{
-                                           AlertDialog();
-                                       }
+                }
+                else{
+                    AlertDialog();
+                }
 
-                                   }
+            }
         });
     }
     private Boolean validationSuccess(){

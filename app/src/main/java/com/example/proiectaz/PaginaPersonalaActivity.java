@@ -106,11 +106,11 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
                 openNews();
                 break;
             case R.id.nav_info:
-               openInfo();
+                openInfo();
 
                 break;
             case R.id.nav_deconectare:
-            openMainActivity();
+                openMainActivity();
 
         }
         drawer2.closeDrawer(GravityCompat.START);
@@ -157,3 +157,4 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         return true;
     }
 }
+
