@@ -12,13 +12,12 @@ import java.util.Map;
 import java.util.Random;
 
 public class AfiseazaRaportUtilizatori  extends View {
-    private Map<String, Integer> source;
+    private Map<Enum, Integer> source;
     private Paint paint;
-    private List<String> labels;
+    private List<Enum> labels;
     private Random random;
 
-
-    public AfiseazaRaportUtilizatori(Context context, Map<String, Integer> source)
+    public AfiseazaRaportUtilizatori(Context context, Map<Enum, Integer> source)
     {
         super(context);
         this.source = source;
@@ -68,7 +67,7 @@ public class AfiseazaRaportUtilizatori  extends View {
         }
     }
 
-    private void drawLabel(Canvas canvas, float x1, float widthOfElement, float paddH, float availableHeight, String label) {
+    private void drawLabel(Canvas canvas, float x1, float widthOfElement, float paddH, float availableHeight, Enum label) {
         paint.setColor(Color.BLACK);
         paint.setTextSize((float) (0.2* widthOfElement));
         float x = x1 + widthOfElement / 2;

@@ -50,8 +50,7 @@ public class Informatii extends AppCompatActivity {
             JSONObject root = new JSONObject(s);
             JSONObject info=root.getJSONObject("Informatii");
             builder.append("Judet: ").append(info.getString("judet")).append("\n\n");
-            //builder.append("Oras: ").append(info.getString("orase")).append("\n");
-            //builder.append("Coordonate").append(info.getString("coordonate")).append("\n");
+
 
             JSONArray orase=info.getJSONArray("orase");
             JSONObject coordonate=orase.getJSONObject(1);

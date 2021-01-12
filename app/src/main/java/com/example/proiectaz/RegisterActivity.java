@@ -66,15 +66,13 @@ public class RegisterActivity extends AppCompatActivity {
                                            user.setEmail(etEmail.getText().toString());
                                            user.setTelefon(etTelefon.getText().toString());
 
-//                                           try {
-//                                               user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
-//                                           } catch(Exception ex) {
-//                                               ex.printStackTrace();
-//                                           }
-
-                                          RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
-                                          String genPers=radioButton.getText().toString().toUpperCase();
-                                          user.setGenPersoana(genPers);
+                                           try {
+                                               user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
+                                           } catch(Exception ex) {
+                                               ex.printStackTrace();
+                                           }
+//                                           RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
+//                                           String genPers=radioButton.getText().toString().toUpperCase();
 
                                            userDB.getUtilizatorDao().insertUtilizator(user);
 
@@ -101,8 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
             etPrenume.setError("Introduceti prenumele !");
             return false;
         }
-        if(etPrenume.length()<4) {
-            etPrenume.setError("Prenumele trebuie sa aiba cel putin 4 caractere");
+        if(etPrenume.length()<2) {
+            etPrenume.setError("Prenumele trebuie sa aiba cel putin 2 caractere");
             return false;
         }
 
@@ -110,16 +108,16 @@ public class RegisterActivity extends AppCompatActivity {
             etNume.setError("Introduceti numele !");
             return false;
         }
-        if(etNume.length()<4) {
-            etNume.setError("Numele trebuie sa aiba cel putin 4 caractere");
+        if(etNume.length()<2) {
+            etNume.setError("Numele trebuie sa aiba cel putin 2 caractere");
             return false;
         }
         if(etUsername.getText().toString().isEmpty()){
             etUsername.setError("Introduceti un nume de utilizator !");
             return false;
         }
-        if(etUsername.length()<4){
-            etUsername.setError("Numele de utilizator trebuie sa aiba cel putin 4 caractere");;
+        if(etUsername.length()<5){
+            etUsername.setError("Numele de utilizator trebuie sa aiba cel putin 5 caractere");;
             return false;
         }
         if(etEmail.getText().toString().isEmpty()){
@@ -138,10 +136,10 @@ public class RegisterActivity extends AppCompatActivity {
             return false;
         }
 
-//        if(gen.getCheckedRadioButtonId()==-1){
-//            Toast.makeText(getApplicationContext(), "Selectati genul!", Toast.LENGTH_LONG).show();
-//            return false;
-//        }
+        if(gen.getCheckedRadioButtonId()==-1){
+            Toast.makeText(getApplicationContext(), "Selectati genul!", Toast.LENGTH_LONG).show();
+            return false;
+        }
 
 
 

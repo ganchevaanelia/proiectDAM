@@ -141,23 +141,10 @@ public class AdaugaSesizareActivity extends AppCompatActivity {
             }
         });
 
-//        Button btnSez;
-//        btnSez = findViewById(R.id.btnSesizare);
-//        btnSez.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                Intent it = new Intent(getApplicationContext(), SesizariActivity.class);
-//                startActivity(it);
-//                finish();
-//
-//            }
-//        });
-
         final EditText etDetaliiSesizare = findViewById(R.id.et_sesizari);
         final TextView tvValueRating = findViewById(R.id.rateCount);
         final EditText parereRating = findViewById(R.id.RatingBarDetalii);
-        //final Intent intent = new Intent(AdaugaSesizareActivity.this, SesizariActivity.class);
+
         final Intent intent = getIntent();
 
         if (intent.hasExtra(SesizariActivity.EDIT_SESIZARE)) {

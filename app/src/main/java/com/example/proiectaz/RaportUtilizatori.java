@@ -22,9 +22,9 @@ import java.util.Map;
 public class RaportUtilizatori extends AppCompatActivity {
 
 
-    ArrayList<Plata> list;
+    ArrayList<Utilizator> list;
     LinearLayout layout;
-    Map<String, Integer> source;
+    Map<Enum, Integer> source;
 //    RadioGroup gen;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,7 @@ public class RaportUtilizatori extends AppCompatActivity {
 
         Intent intent = getIntent();
 
-        list = (ArrayList<Plata>) intent.getSerializableExtra("list");
+        list = (ArrayList<Utilizator>) intent.getSerializableExtra("list");
 
         source = getSource(list);
 
@@ -70,18 +70,18 @@ public class RaportUtilizatori extends AppCompatActivity {
         layout.addView(new AfiseazaRaportUtilizatori(getApplicationContext(), source));
     }
 
-    private Map<String, Integer> getSource(List<Plata> utilizatori)
+    private Map<Enum, Integer> getSource(List<Utilizator> movies)
     {
-        if(utilizatori==null || utilizatori.isEmpty())
+        if(movies==null || movies.isEmpty())
             return new HashMap<>();
         else
         {
-            Map<String, Integer> results = new HashMap<>();
-            for(Plata utilizator: utilizatori)
-                if(results.containsKey(utilizator.getTaxaImpozit()))
-                    results.put(utilizator.getTaxaImpozit(), results.get(utilizator.getTaxaImpozit())+1);
+            Map<Enum, Integer> results = new HashMap<>();
+            for(Utilizator movie: movies)
+                if(results.containsKey(movie.getGen()))
+                    results.put(movie.getGen(), results.get(movie.getGen())+1);
                 else
-                    results.put(utilizator.getTaxaImpozit(), 1);
+                    results.put(movie.getGen(), 1);
             return results;
         }
     }

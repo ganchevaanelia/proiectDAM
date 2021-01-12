@@ -20,12 +20,8 @@ import android.widget.CompoundButton;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PaginaPersonalaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     private DrawerLayout drawer2;
-    List<Plata> listaUtilizatori=new ArrayList<>();
     //public static final int REQUEST_CODE = 300;
 
     @Override
@@ -149,13 +145,8 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
 
         switch (item.getItemId()) {
             case R.id.raportUtilizatori:
-
-//                ArrayList<Plata> list=new ArrayList<>(); //punem toate filmele
-//                for (Plata utilizator:listaUtilizatori)
-//                    list.add(utilizator);
-//                Intent raportUtilizatori = new Intent(this, RaportUtilizatori.class);
-//                raportUtilizatori.putExtra("list", list);
-//                startActivity(raportUtilizatori);
+                Intent raportUtilizatori = new Intent(this, RaportUtilizatori.class);
+                startActivity(raportUtilizatori);
                 break;
             case R.id.raportSesizari:
                 Intent raportSesizari = new Intent(this, RaportSesizari.class);
