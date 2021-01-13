@@ -34,7 +34,7 @@
                 android:background="@color/colorAccentDark2"
                 android:paddingStart="15dp"
                 android:paddingTop="10dp"
-                android:text="Plati"
+                android:text="@string/plati"
                 android:textColor="@android:color/white"
                 android:textSize="30sp"
                 android:textStyle="bold"></TextView>
@@ -76,7 +76,7 @@
                 android:layout_marginTop="1dp"
                 android:background="@drawable/buttom_rounded"
                 android:gravity="center"
-                android:text="Importa"
+                android:text="@string/raportare"
                 android:textColor="@android:color/white"
                 android:textStyle="italic" />
 

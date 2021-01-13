@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="City  ------  "
+            android:text="@string/city"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lat  ------  "
+            android:text="@string/lat"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -55,7 +55,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lng  ------  "
+            android:text="@string/lng"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -74,7 +74,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Country  ------  "
+            android:text="@string/country"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -94,7 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ISO2  ------  "
+            android:text="@string/iso2"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -114,7 +114,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Admin-name  ------  "
+            android:text="@string/admin_name"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -134,7 +134,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Capital  ------  "
+            android:text="@string/capital"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -153,7 +153,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Population  ------  "
+            android:text="@string/population"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>
@@ -171,7 +171,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Population-proper  ------  "
+            android:text="@string/population_proper"
             android:textColor="@android:color/black"
             android:textStyle="bold">
         </TextView>

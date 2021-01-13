@@ -134,27 +134,5 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.meniu_rapoarte, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        switch (item.getItemId()) {
-            case R.id.raportUtilizatori:
-                Intent raportUtilizatori = new Intent(this, RaportUtilizatori.class);
-                startActivity(raportUtilizatori);
-                break;
-            case R.id.raportSesizari:
-                Intent raportSesizari = new Intent(this, RaportSesizari.class);
-                startActivity(raportSesizari);
-                break;
-
-        }
-        return true;
-    }
 }
 

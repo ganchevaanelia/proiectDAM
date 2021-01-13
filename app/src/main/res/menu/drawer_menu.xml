@@ -5,15 +5,15 @@
 <group android:checkableBehavior="single" ><!--ca sa putem selecta un singer item din grupul resp-->
 <item android:id="@+id/nav_profil"
     android:icon="@drawable/user"
-    android:title="Autentificare"/>
+    android:title="@string/autentificare"/>
 
     <item android:id="@+id/nav_news"
         android:icon="@drawable/newspaper"
-        android:title="Anunturi"/>
+        android:title="@string/anunturi"/>
 
     <item android:id="@+id/nav_info"
         android:icon="@drawable/information"
-        android:title="Informatii"/>
+        android:title="@string/informatii"/>
 </group>
 
 </menu>

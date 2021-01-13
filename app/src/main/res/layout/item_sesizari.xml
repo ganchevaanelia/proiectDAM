@@ -18,7 +18,7 @@
 
             <ImageView
                 android:id="@+id/imageViewSesizare"
-                android:layout_width="54dp"
+                android:layout_width="51dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
 
@@ -46,7 +46,7 @@
             android:layout_gravity="right"
 
 
-            android:text="Editeaza"></Button>
+            android:text="@string/editeaza"></Button>
 
             <TextView
                 android:id="@+id/tvCategorie"

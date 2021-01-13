@@ -80,6 +80,25 @@
     <string name="button_load_info">Incarca informatii</string>
     <string name="sterge_sesizare">Sterge sesizare</string>
     <string name="informatii">Informatii</string>
+    <string name="stema">stemaIasi</string>
+    <string name="profil">Profil</string>
+    <string name="deconectare">Deconectare</string>
+    <string name="autentificare">Autentificare</string>
+    <string name="taxa">Taxa</string>
+    <string name="impozit">Impozit</string>
+    <string name="adauga">Adauga</string>
+    <string name="raportare">Raportare</string>
+    <string name="city">City ------</string>
+    <string name="lat">Lat ------</string>
+    <string name="lng">Lng ------</string>
+    <string name="country">Country ------</string>
+    <string name="iso2">ISO2 ------</string>
+    <string name="admin_name">Admin-name ------</string>
+    <string name="capital">Capital ------</string>
+    <string name="population">Population ------</string>
+    <string name="population_proper">Population-proper ------</string>
+    <string name="schimba_font">Schimba font</string>
+    <string name="editeaza">Editeaza</string>
     <string-array name="add_plata_pers">
         <item>FIZICA </item>
         <item>JURIDICA</item>

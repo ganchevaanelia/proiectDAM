@@ -11,18 +11,17 @@
 
     android:id="@+id/logIn"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorAccentLight"
     tools:context=".ProfilActivity"
     android:paddingBottom="120dp">
-
-
 
 
     <ImageView
         android:layout_width="83dp"
         android:layout_height="80dp"
         android:layout_marginTop="36dp"
+        android:contentDescription="@string/stema"
         android:maxWidth="40dp"
         android:maxHeight="40dp"
         android:src="@drawable/stema"
@@ -36,6 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:layout_marginTop="20dp"
+        android:contentDescription="@string/LogIn"
         android:maxWidth="40dp"
         android:maxHeight="40dp"
         android:src="@drawable/ic_baseline_account_circle_24"

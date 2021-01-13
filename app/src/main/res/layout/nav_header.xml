@@ -17,7 +17,8 @@
         android:maxHeight="40dp"
         android:scaleType="fitCenter"
 
-        android:src="@drawable/stema" />
+        android:src="@drawable/stema"
+        android:contentDescription="@string/stema" />
 
     <TextView
         android:layout_width="wrap_content"
