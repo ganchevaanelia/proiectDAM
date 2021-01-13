@@ -7,7 +7,6 @@ import java.util.Date;
 
 
 enum TipPersoana {FIZICA, JURIDICA};
-//enum TaxaImpozit{TAXA, IMPOZIT}
 
 public class Plata implements Serializable {
 
@@ -17,7 +16,6 @@ public class Plata implements Serializable {
     private String uid; //trebuie sa schimb aici
     private String nume;
     private TipPersoana tipPersoana;
-    //private TaxaImpozit taxaImpozit;
     private String taxaImpozit;
     private String detalii;
     private float suma;
@@ -126,15 +124,6 @@ public class Plata implements Serializable {
     public void setDetalii(String detalii) {
         this.detalii = detalii;
     }
-
-//    public TaxaImpozit getTaxaImpozit() {
-//        return taxaImpozit;
-//    }
-//
-//    public void setTaxaImpozit(TaxaImpozit taxaImpozit) {
-//        this.taxaImpozit = taxaImpozit;
-//    }
-
 
     public String getTaxaImpozit() {
         return taxaImpozit;

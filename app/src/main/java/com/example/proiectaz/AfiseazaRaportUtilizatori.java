@@ -50,7 +50,7 @@ public class AfiseazaRaportUtilizatori  extends View {
             float widthOfElement = availableWidth / source.size();
             for (int i = 0; i < labels.size(); i++) {
                 //determinam o culoare aleator
-                int color = Color.argb(100,
+               int color = Color.argb(100,
                         1 + random.nextInt(254),
                         1 + random.nextInt(254),
                         1 + random.nextInt(254));

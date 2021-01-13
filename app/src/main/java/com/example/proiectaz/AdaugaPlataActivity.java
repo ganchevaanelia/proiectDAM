@@ -139,8 +139,6 @@ public class AdaugaPlataActivity extends AppCompatActivity {
                                     Date data = new Date(afiseazaData.getText().toString());
                                     int codCVV = Integer.parseInt(codCvv.getText().toString());
 
-                                    //RadioButton radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
-                                    //TaxaImpozit taxaImpozit= TaxaImpozit.valueOf(radioButton.getText().toString().toUpperCase());
                                     RadioButton radioButton = findViewById(radioGroup.getCheckedRadioButtonId());
                                     String taxaImpozit = radioButton.getText().toString().toUpperCase();
 

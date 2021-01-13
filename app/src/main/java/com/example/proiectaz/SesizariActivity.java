@@ -136,7 +136,6 @@ public class SesizariActivity extends AppCompatActivity {
 
 
                 SesizareAdapter adapter = new SesizareAdapter(getApplicationContext(), R.layout.item_sesizari, sesizareList, getLayoutInflater()) {
-                    //getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()
                     @NonNull
                     @Override
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {

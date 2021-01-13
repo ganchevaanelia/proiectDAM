@@ -96,26 +96,6 @@ public class PlataAdapter extends BaseAdapter {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View v) {
-                //Drawable drawable = R.color.colorAccentLight;
-                //view.setBackgroundColor(R.color.colorAccentLight);
-
-//                if(plata.getTaxaImpozit().equals(TaxaImpozit.TAXA))
-//                    view.setBackgroundColor(Color.GRAY);
-//
-//
-//                else
-//                    view.setBackgroundColor(Color.LTGRAY);
-//
-//                if(plata.getTaxaImpozit()=="TAXA");
-//                view.setBackgroundColor(Color.GRAY);
-//                 else
-//                   view.setBackgroundColor(Color.LTGRAY);
-
-
-
-
-
-
             }
         });
 

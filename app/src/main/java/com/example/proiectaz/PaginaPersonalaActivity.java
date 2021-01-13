@@ -22,7 +22,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class PaginaPersonalaActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
     private DrawerLayout drawer2;
-    //public static final int REQUEST_CODE = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,7 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         drawer2 = findViewById(R.id.drawer_layout2);
         NavigationView navigationView2 = findViewById(R.id.nav_view2);
         navigationView2.setNavigationItemSelectedListener(this);
-        navigationView2.setItemIconTintList(null); //se coloreaza icoanele }
+        navigationView2.setItemIconTintList(null); //se coloreaza icoanele
 
 
         ActionBarDrawerToggle toggle2 = new ActionBarDrawerToggle
@@ -101,8 +100,6 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
                 openProfilOperatiuni();
                 break;
             case R.id.nav_news:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container2,
-//                        new NewsFragment()).commit();
                 openNews();
                 break;
             case R.id.nav_info:
@@ -116,14 +113,6 @@ public class PaginaPersonalaActivity extends AppCompatActivity implements Naviga
         drawer2.closeDrawer(GravityCompat.START);
         return true;
     }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK && data != null) {
-//            Utilizator utilizator = (Utilizator) data.getSerializableExtra(ProfilActivity.Utilizator);
-//        }
-//    }
 
     @Override
     public void onBackPressed() { //daca meniul e deschis si apasam back il deschide, daca e inchis iese din app

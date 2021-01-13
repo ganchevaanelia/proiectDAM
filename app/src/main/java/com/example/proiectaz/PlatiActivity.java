@@ -97,49 +97,7 @@ public class PlatiActivity extends AppCompatActivity {
 
             }
         });
-//
-//        final DatabaseReference myRef = database.getReference("proiect-android-2560b-default-rtdb");
-//        myRef.keepSynced(true);
-//
-//        ValueEventListener messageListener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-//                    plataList.clear();
-//                    for (DataSnapshot dn : snapshot.getChildren()) {
-//                        Plata plata = dn.getValue(Plata.class);
-//                        plataList.add(plata);
-//                    }
-//                }
-//
-//
-//                plati.clear();
-//                for (Plata pl : plataList)
-//                    plati.add(pl.toString());
-//
-//
-//                PlataAdapter adapter = new PlataAdapter(getApplicationContext(), R.layout.item_plati, plataList, getLayoutInflater(), R.drawable.payment_method) {
-//                    //getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()
-//                    @NonNull
-//                    @Override
-//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//                        View view = super.getView(position, convertView, parent);
-//
-//                        Plata plata = plataList.get(position);
-//
-//                        return view;
-//                    }
-//                };
-//                listView.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        };
-//        myRef.child("proiect-android-2560b-default-rtdb").addValueEventListener(messageListener);
-//
+
 
         Button adaugaPlata = findViewById(R.id.efectueaza_plata);
         adaugaPlata.setOnClickListener(new View.OnClickListener() {
@@ -147,9 +105,6 @@ public class PlatiActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new Task(PlatiActivity.this).execute();
 
-
-//                Intent intent = new Intent(getApplicationContext(), AdaugaPlataActivity.class);
-//                startActivityForResult(intent, REQUEST_CODE);
             }
         });
 
@@ -178,87 +133,6 @@ public class PlatiActivity extends AppCompatActivity {
             }
         });
     }
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//
-//        DatabaseReference myRef = database.getReference("proiect-android-2560b-default-rtdb");
-//        myRef.keepSynced(true);
-//
-//        myRef.addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//                if (dataSnapshot == null) return;
-//                for( DataSnapshot ds :dataSnapshot.getChildren()) {
-//                   Plata plata = ds.getValue(Plata.class); //here 'Bazar' model class
-//                    plataList.add(plata);
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-
-//
-//        ValueEventListener listener = new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                if(snapshot.exists())
-//                {
-//                    plataList.clear();
-//                    for(DataSnapshot dn: snapshot.getChildren())
-//                    {
-//
-//
-//                        Plata plata = dn.getValue(Plata.class);
-//                        plataList.add(plata);
-//                    }
-//                }
-//
-//                PlataAdapter adapter = new PlataAdapter(getApplicationContext(), R.layout.item_plati,
-//                        plataList, getLayoutInflater(), R.drawable.payment_method){
-//                    @NonNull
-//                    @Override
-//                    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//                        View view = super.getView(position, convertView, parent);
-//
-//                        Plata plata =  plataList.get(position);
-//
-//
-//                        return view;
-//                    }
-//                };
-//                listView.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        };
-//
-//        myRef.child("proiect-android-2560b-default-rtdb").addValueEventListener(listener);
-    //  }
 
 
     @Override
@@ -272,7 +146,7 @@ public class PlatiActivity extends AppCompatActivity {
                 plataList.add(plata);
 
                 PlataAdapter adapter = new PlataAdapter(getApplicationContext(), R.layout.item_plati, plataList, getLayoutInflater(), R.drawable.payment_method) {
-                    //getApplicationContext(), R.layout.item_plati,plataList,getLayoutInflater()
+
                     @NonNull
                     @Override
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -283,8 +157,6 @@ public class PlatiActivity extends AppCompatActivity {
                         return view;
                     }
                 };
-//              ArrayAdapter<Plata> adapter = new ArrayAdapter<Plata>(PlatiActivity.this,
-//                      android.R.layout.simple_list_item_1, plataList);
 
 
                 listView.setAdapter(adapter);

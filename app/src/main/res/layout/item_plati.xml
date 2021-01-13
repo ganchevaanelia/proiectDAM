@@ -23,6 +23,7 @@
                 android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:background="@drawable/payment_method"
+                android:contentDescription="@string/plati"
                 android:scaleType="fitXY">
 
             </ImageView>

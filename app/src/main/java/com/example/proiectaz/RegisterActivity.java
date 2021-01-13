@@ -29,12 +29,15 @@ public class RegisterActivity extends AppCompatActivity {
     EditText etNume;
     EditText etEmail;
     EditText etTelefon;
+    RadioButton rbMale;
+    RadioButton rbFemale;
 
     String username;
     String password;
     RadioGroup  gen;
 
     public static UtilizatorDB userDB;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +55,8 @@ public class RegisterActivity extends AppCompatActivity {
         etTelefon=findViewById(R.id.etTelefonRegister);
         gen=findViewById(R.id.radioGroup2);
 
+   rbMale = findViewById(R.id.rbMale);
+
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,13 +71,17 @@ public class RegisterActivity extends AppCompatActivity {
                     user.setEmail(etEmail.getText().toString());
                     user.setTelefon(etTelefon.getText().toString());
 
-                    try {
-                        user.setGen(Gen.valueOf(gen.toString().toUpperCase()));
-                    } catch(Exception ex) {
-                        ex.printStackTrace();
-                    }
-//                                           RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
-//                                           String genPers=radioButton.getText().toString().toUpperCase();
+                   // RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
+                  //  String genPers=radioButton.getText().toString().toUpperCase();
+                  //  user.setGen(genPers);
+
+
+                    RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
+
+                    String genS = radioButton.getText().toString().toUpperCase();
+
+                    user.setGen(genS);
+
 
                     userDB.getUtilizatorDao().insertUtilizator(user);
 
@@ -140,6 +149,7 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Selectati genul!", Toast.LENGTH_LONG).show();
             return false;
         }
+
 
 
 
