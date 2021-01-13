@@ -18,7 +18,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import static com.example.proiectaz.Gen.MASCULIN;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -70,10 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
                     user.setPassword(etPassword.getText().toString());
                     user.setEmail(etEmail.getText().toString());
                     user.setTelefon(etTelefon.getText().toString());
-
-                   // RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
-                  //  String genPers=radioButton.getText().toString().toUpperCase();
-                  //  user.setGen(genPers);
 
 
                     RadioButton radioButton = findViewById(gen.getCheckedRadioButtonId());
