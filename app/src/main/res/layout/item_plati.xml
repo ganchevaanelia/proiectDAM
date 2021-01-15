@@ -38,17 +38,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnMoreInfo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-       android:layout_gravity="right"
-
-
-            android:text="@string/schimba_font">
-
-        </Button>
-    <TextView
+        <TextView
         android:id="@+id/numePrenume"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
