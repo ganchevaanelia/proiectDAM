@@ -10,15 +10,6 @@
     tools:context=".PlatiActivity"
    >
 
-
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_alignParentStart="true"-->
-<!--        android:layout_alignParentTop="true"-->
-<!--        android:layout_marginStart="0dp"-->
-<!--        android:layout_marginTop="1dp">-->
-
         <LinearLayout
             android:id="@+id/plati"
             android:layout_width="match_parent"
@@ -43,43 +34,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"></Space>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
             <Button
                 android:id="@+id/efectueaza_plata"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="right"
+                android:layout_gravity="left"
                 style="@style/ButtonStyle"
-                android:gravity="center"
                 android:text="@string/efectueaza_o_plata"
-
-
+                android:layout_weight="1"
                 />
-
-
-            <!--    <Button-->
-            <!--        android:id="@+id/btnPlatiEfectuate"-->
-            <!--        android:layout_width="wrap_content"-->
-            <!--        android:layout_height="wrap_content"-->
-            <!--        android:layout_alignParentRight="true"-->
-            <!--        android:layout_below="@+id/tvPlati"-->
-
-            <!--        android:onClick="arataListaPlati"-->
-            <!--        android:text="@string/plati_efectuate" />-->
 
             <Button
                 android:id="@+id/Grafic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_marginStart="0dp"
-
-                android:layout_marginTop="1dp"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                style="@style/ButtonStyle"
                 android:background="@drawable/buttom_rounded"
-                android:gravity="center"
                 android:text="@string/raportare"
                 android:textColor="@android:color/white"
                 android:textStyle="italic" />
-
+        </LinearLayout>
             <ListView
                 android:id="@+id/listViewPlati"
                 android:layout_width="match_parent"
@@ -90,7 +69,6 @@
 
         </LinearLayout>
 
-<!--    </ScrollView>-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

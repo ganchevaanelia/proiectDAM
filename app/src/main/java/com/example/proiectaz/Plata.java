@@ -13,7 +13,7 @@ public class Plata implements Serializable {
 
 
 
-    private String uid; //trebuie sa schimb aici
+    private String uid;
     private String nume;
     private TipPersoana tipPersoana;
     private String taxaImpozit;

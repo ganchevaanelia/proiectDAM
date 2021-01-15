@@ -57,7 +57,6 @@ Button loginOk=findViewById(R.id.loginOk);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent it = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
             }
         });

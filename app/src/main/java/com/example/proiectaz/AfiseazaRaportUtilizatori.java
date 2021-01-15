@@ -25,7 +25,6 @@ public class AfiseazaRaportUtilizatori  extends View {
         super(context);
         this.source = source;
         this.paint = new Paint();
-       // paint.setColor(Color.BLACK);
         labels = new ArrayList<>(source.keySet());
         random = new Random();
     }
