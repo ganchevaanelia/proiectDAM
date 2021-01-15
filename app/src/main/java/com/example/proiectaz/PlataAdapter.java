@@ -91,6 +91,18 @@ public class PlataAdapter extends BaseAdapter {
         TextView codCVV=view.findViewById(R.id.codCVV);
         codCVV.setText(String.valueOf(plata.getCodCvv()));
 
+        Button btnMoreInfo=view.findViewById(R.id.btnMoreInfo);
+        btnMoreInfo.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View v) {
+                if(plata.getTaxaImpozit().equals("TAXA"))
+                    view.setBackgroundColor(Color.GRAY);
+
+                else
+                    view.setBackgroundColor(Color.LTGRAY);
+            }
+        });
 
        return view;
     }
