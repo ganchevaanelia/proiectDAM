@@ -166,40 +166,4 @@ public class PlatiActivity extends AppCompatActivity {
 
     }
 
-
-//    public ArrayList<Plata> restaurare() {
-//
-//        final DatabaseReference myRef = database.getReference("proiect-android-2560b-default-rtdb");
-//        myRef.child("proiect-android-2560b-default-rtdb").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                plataList.clear();
-//                if (dataSnapshot.exists() && dataSnapshot.getChildrenCount() > 0) {
-//                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
-//                        Plata plata = ds.getValue(Plata.class);
-//                        plataList.add(plata);
-//                    }
-//                    PlataAdapter adapter = new PlataAdapter(getApplicationContext(), R.layout.item_plati, plataList, getLayoutInflater(), R.drawable.payment_method) {
-//                        @NonNull
-//                        @Override
-//                        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//
-//                            View view = super.getView(position, convertView, parent);
-//
-//                            Plata plata = plataList.get(position);
-//
-//                            return view;
-//                        }
-//                    };
-//                    listView.setAdapter(adapter);
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//            }
-//        });
-//        return (ArrayList<Plata>) plataList;
-//    }
 }
