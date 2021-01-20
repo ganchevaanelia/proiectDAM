@@ -1,23 +1,23 @@
 <resources>
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorAccentDark1</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccentDark1</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-
     </style>
 
     <style name="AppTheme.NoActionBar">
-
         <item name="android:statusBarColor"> @android:color/transparent</item>
     </style>
 
     <style name="AppThemeDate">
-
         <item name="backgroundColor"> @color/colorAccentLight</item>
+    </style>
+
+    <style name="CityApp">
+        <item name="android:textSize">8pt</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="FontStyleTextView">
@@ -26,8 +26,6 @@
         <item name="android:textSize">8pt</item>
         <item name="android:textStyle">bold</item>
         <item name= "android:textColor">@android:color/white</item>
-
-        />
     </style>
 
     <style name ="ButtonStyle">
@@ -42,13 +40,10 @@
     </style>
 
     <style name ="RadioButtonStyle">
-
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">5dp </item>
         <item name="android:buttonTint"> @color/colorAccentLight</item>
-
-
     </style>
 
 

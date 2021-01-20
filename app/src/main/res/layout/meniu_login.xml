@@ -43,6 +43,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorAccentDark2"
             android:elevation="4dp"
+            app:titleTextAppearance="@style/CityApp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
         </androidx.appcompat.widget.Toolbar>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">City App</string>
+    <string name="app_name">Primăria Municipiului Iași</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -55,7 +55,7 @@
     <string name="anunturi">Anunturi</string>
     <string name="plati_efectuate">Plati efectuate</string>
 
-    <string name="welcometext">Welcome to Iasi!</string>
+    <string name="welcometext">Bine ați venit!</string>
     <string name="bine_ati_venit">Primaria municipiului Iasi!</string>
     <string name="informatia">Informatia</string>
     <string name="loading">LOADING...</string>
